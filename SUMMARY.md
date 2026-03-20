@@ -8,6 +8,7 @@
 * [💰 Models & Costs](docs/02b-models-and-costs.md)
 * [Permissions & Security](docs/03-permissions-and-security.md)
 * [Persistent Memory](docs/04-persistent-memory.md)
+* [🎯 Skills: Giving Your Agent Superpowers](docs/04b-skills.md)
 * [Always-On: Telegram & Discord](docs/05-always-on-agent.md)
 * [Automation & Workflows](docs/06-automation-workflows.md)
 * [Build Your Own Agent](docs/07-custom-agent-diy.md)
@@ -18,3 +19,4 @@
 * [Twitter/X Resources](docs/10-twitter-index.md)
 * [💡 Use Cases](docs/12-use-cases.md)
 * [Glossary](docs/11-glossary.md)
+
