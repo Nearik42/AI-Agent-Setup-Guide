@@ -182,3 +182,7 @@ Skip to the section that matches where you are in the guide.
 ---
 
 *This index is curated from real bookmarks, not sponsored or affiliate content. Tweets without substantive text were excluded. Focus is on practical, actionable content.*
+
+---
+
+[← 🤖 Multi-Agent Architecture](09-multi-agent.md) · [📚 Table of Contents](../README.md) · [📖 Glossary →](11-glossary.md)
