@@ -1,8 +1,3 @@
----
-title: "🔍 Framework Deep Dive"
-nav_order: 14
----
-
 # Framework Deep Dive: How They Work, Security & Business Opportunities
 
 You've picked a framework. You've got agents running. But do you know what's actually happening inside? And more importantly — what breaks, what's dangerous, and what people are actually making money with?
