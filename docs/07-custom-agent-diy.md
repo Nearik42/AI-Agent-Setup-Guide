@@ -340,3 +340,7 @@ Your DIY agent has the core concept right. Frameworks add reliability, features,
 You now understand how agents work at the code level. That knowledge makes you a much better user of any framework you pick.
 
 Next chapter: a tour of the major frameworks — OpenClaw, n8n, CrewAI, AutoGen, LangGraph — and when to use each.
+
+---
+
+[← ⚙️ Automation & Workflows](06-automation-workflows.md) · [📚 Table of Contents](../README.md) · [🏗️ Agent Frameworks →](08-frameworks.md)
