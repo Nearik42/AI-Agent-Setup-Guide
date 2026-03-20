@@ -207,7 +207,7 @@ def route_to_model(task_type: str) -> str:
     if task_type in cheap_tasks:
         return "claude-haiku-3-5"      # ~20x cheaper than Opus
     elif task_type in medium_tasks:
-        return "claude-sonnet-4-5"     # Good balance
+        return "claude-sonnet-4-6"     # Good balance
     else:
         return "claude-opus-4-5"       # Best reasoning
 ```
