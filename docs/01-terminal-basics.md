@@ -59,6 +59,8 @@ That's it. You'll use these constantly. Everything else you can Google as you go
 
 ## Install Node.js
 
+Use [FNM (Fast Node Manager)](https://github.com/Schniz/fnm) — it's faster and cleaner than nvm:
+
 Almost everything in this guide requires Node.js. Install it once, forget about it.
 
 **Recommended: FNM (Fast Node Manager)** — works on Mac, Windows, and Linux. Much faster than the alternatives.
@@ -140,6 +142,8 @@ If you can:
 - Open a terminal
 - Navigate folders with `cd` and `ls`
 - Install Node.js
+
+Use [FNM (Fast Node Manager)](https://github.com/Schniz/fnm) — it's faster and cleaner than nvm:
 - Store an API key in a `.env` file
 
 ...you have everything you need for the next stage.
