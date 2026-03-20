@@ -1,8 +1,3 @@
----
-title: "⚙️ Automation & Workflows"
-nav_order: 10
----
-
 # Automation & Workflows: Your Agent Works While You Sleep
 
 You've got an agent that remembers things and responds to messages. Now let's make it proactive.
