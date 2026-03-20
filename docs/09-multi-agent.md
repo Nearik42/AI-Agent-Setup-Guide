@@ -245,3 +245,7 @@ Multi-agent setups are powerful but they're also harder to debug. One well-confi
 You now have the complete picture — from zero to multi-agent system. The remaining chapters are reference material: a curated Twitter/X index of resources and a glossary of every term used in this guide.
 
 Go build something.
+
+---
+
+[← 🔍 Framework Deep Dive](08c-framework-deep-dive.md) · [📚 Table of Contents](../README.md) · [🐦 Twitter/X Resources →](10-twitter-index.md)
