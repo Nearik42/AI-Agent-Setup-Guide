@@ -154,3 +154,7 @@ Use [FNM (Fast Node Manager)](https://github.com/Schniz/fnm) — it's faster and
 - Store an API key in a `.env` file
 
 ...you have everything you need for the next stage.
+
+---
+
+[← 🏠 Deployment Options](00b-deployment-options.md) · [📚 Table of Contents](../README.md) · [⚡ Claude Code: First Agent →](02-claude-code-first.md)
