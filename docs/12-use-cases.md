@@ -8,7 +8,7 @@ Note-taking assistants and calendar summaries get all the press. Here's what's a
 
 ## 1. Due Diligence Research Agent ⭐⭐⭐ Advanced
 
-**What it does:** Researches companies for M&A decisions, investment opportunities, or partnership evaluation — automatically.
+**What it does:** Researches companies for due diligence decisions, investment opportunities, or partnership evaluation — automatically.
 
 **In practice:** The agent scrapes public information (LinkedIn, Crunchbase, news, filings), analyzes financials, maps competitors, identifies red flags, and generates a structured due diligence report. What used to take a junior analyst 2-3 days now takes 30 minutes.
 
