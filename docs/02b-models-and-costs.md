@@ -262,3 +262,7 @@ Most serious setups use API models for the main agent work and local models for 
 *These numbers assume sensible context engineering. Ignoring context size can 3-5x these estimates.*
 
 *Check current pricing at [anthropic.com/pricing](https://anthropic.com/pricing) and [openai.com/pricing](https://openai.com/pricing) — prices change regularly.*
+
+---
+
+[← ⚡ Claude Code: First Agent](02-claude-code-first.md) · [📚 Table of Contents](../README.md) · [🔒 Permissions & Security →](03-permissions-and-security.md)
