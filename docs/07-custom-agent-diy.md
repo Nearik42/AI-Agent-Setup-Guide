@@ -6,6 +6,10 @@ This chapter builds a minimal but real agent in ~100 lines of Python. It has mem
 
 ---
 
+> 💬 **Community:** [@karpathy](https://x.com/karpathy/status/2030371219518931079) — "I packaged up the autoresearch project into a new self-contained minimal repo." Building from scratch is how you learn what frameworks are actually doing.
+
+> 💬 **Community:** [@omarsar0](https://x.com/omarsar0/status/2030771811705872435) — "OpenDev is an 81-page paper covering scaffolding for terminal-based coding agents." The best reference for understanding agent architecture.
+
 ## What Frameworks Actually Do
 
 When people say "I'm using CrewAI" or "I'm using OpenClaw," they mean they're using a framework that handles:
