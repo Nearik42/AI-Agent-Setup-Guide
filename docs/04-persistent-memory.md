@@ -191,3 +191,7 @@ This is a living document. The agent reads it, updates it, and becomes more usef
 You have a persistent agent that remembers your projects. But it only works when you open a terminal.
 
 Next: make it available 24/7 via Telegram or Discord.
+
+---
+
+[← 🔒 Permissions & Security](03-permissions-and-security.md) · [📚 Table of Contents](../README.md) · [🎯 Skills →](04b-skills.md)
