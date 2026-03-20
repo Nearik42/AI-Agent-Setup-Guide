@@ -191,7 +191,7 @@ With that sorted, let's give your agent a memory.
 
 ## When Using Bypass/Dangerously Skip: A Security Checklist
 
-Inspired by how this guide's author (Erik) actually configured his OpenClaw agents:
+Here's a real-world CLAUDE.md security policy that works in practice:
 
 ### 1. Constrain via CLAUDE.md — Your Most Powerful Tool
 
