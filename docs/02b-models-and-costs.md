@@ -1,189 +1,253 @@
 # Models & Costs: What You're Actually Paying For
 
-The hidden surprise in AI agent setups: it's not the server that costs money, it's the model API calls. Understanding this upfront saves you from unexpected bills.
+The hidden surprise in AI agent setups: it's not the server that costs money — it's the model API calls. Understanding this upfront saves you from unexpected bills.
 
 ---
 
 ## Current Model Landscape (2026)
 
-### Anthropic Claude (recommended for this guide)
+### Anthropic Claude
 
-| Model | API Name | Speed | Intelligence | Cost (Input/Output per 1M tokens) |
-|-------|----------|-------|-------------|-----------------------------------|
-| Claude Opus 4.5 | `claude-opus-4-5` | Slow | Highest | ~$15 / $75 |
-| Claude Sonnet 4.6 | `claude-sonnet-4-6` | Fast | Very High | ~$3 / $15 |
-| Claude Haiku 3.5 | `claude-haiku-3-5` | Very Fast | Good | ~$0.80 / $4 |
+| Model | API ID | Speed | Best For | Cost (per 1M tokens in/out) |
+|-------|--------|-------|---------|---------------------------|
+| Claude Opus 4.5 | `claude-opus-4-5` | Slow | Complex reasoning, highest quality | ~$15 / $75 |
+| Claude Sonnet 4.6 | `claude-sonnet-4-6` | Fast | Daily work, coding, agents | ~$3 / $15 |
+| Claude Haiku 3.5 | `claude-haiku-3-5` | Very Fast | High-volume, routing, summaries | ~$0.80 / $4 |
 
-**The practical recommendation**: Start with Sonnet 4.6. It's the current sweet spot — fast, very capable, and reasonable cost. Opus 4.5 is for complex reasoning tasks where you need maximum intelligence. Haiku 3.5 is for high-volume automation where cost matters more than quality.
+**The recommendation**: Start with **Sonnet 4.6** — current sweet spot for agent work. Fast, highly capable, reasonable cost. Use Haiku 3.5 for routing/triage tasks. Opus 4.5 only for tasks that genuinely need maximum intelligence.
 
-> **Note on model names**: Anthropic updates model IDs regularly. Always check [docs.anthropic.com/en/docs/models-overview](https://docs.anthropic.com/en/docs/models-overview) for the latest. The names above reflect current models — they will change.
+> ⚠️ **Model names change.** Always verify at [docs.anthropic.com/en/docs/models-overview](https://docs.anthropic.com/en/docs/models-overview) before hardcoding any model ID in production.
 
-### OpenAI (alternative)
+---
 
-| Model | Notes | Cost |
-|-------|-------|------|
-| GPT-5.4 | Currently highest capability | ~$10 / $30 per 1M tokens |
-| GPT-4.1 | Good balance | ~$2 / $8 per 1M tokens |
-| GPT-4.1 mini | Fast, cheap | ~$0.40 / $1.60 per 1M tokens |
+### OpenAI
 
-### Google Gemini (alternative)
+| Model | Notes | Cost (per 1M tokens in/out) |
+|-------|-------|---------------------------|
+| GPT-5.4 | Current flagship, strongest reasoning + coding | ~$10 / $30 |
+| o3 | Reasoning model, slower but exceptional for hard problems | ~$10 / $40 |
+| o4-mini | Fast reasoning at lower cost | ~$1.10 / $4.40 |
+| GPT-4.1 mini | Cheap, fast, good for routing | ~$0.40 / $1.60 |
 
-| Model | Notes | Cost |
-|-------|-------|------|
-| Gemini 2.5 Pro | 2M token context window | ~$3.50 / $10.50 |
-| Gemini 2.0 Flash | Fast, cheap | ~$0.10 / $0.40 |
+**Note**: GPT-4.1 (non-mini) and o1 are largely superseded. For serious agent work in 2026, use GPT-5.4 or o3. o4-mini is excellent value for reasoning-intensive tasks that don't need full o3.
+
+---
+
+### Google Gemini
+
+| Model | Notes | Cost (per 1M tokens in/out) |
+|-------|-------|---------------------------|
+| Gemini 2.5 Pro | Massive 2M token context window | ~$3.50 / $10.50 |
+| Gemini 2.0 Flash | Fast, cheap, good for high-volume | ~$0.10 / $0.40 |
+
+**When to choose Gemini**: If you need to process huge documents (entire codebases, long video transcripts) in a single pass — the 2M token context window is unique.
 
 ---
 
 ## Subscription Plans vs. API
 
-There are two ways to pay:
+**This distinction trips up almost everyone.**
 
 ### API (Pay-as-you-go)
 - Pay per token consumed
-- No monthly commitment
-- Good for: variable usage, learning, building
+- No monthly commitment  
+- Used by: Claude Code, automated agents, any API-based tool
+- Good for: learning, building, variable usage
 
-### Subscription Plans
+### Subscription Plans (Web Interface)
+| Plan | Price | What you actually get |
+|------|-------|----------------------|
+| Claude.ai Pro | $20/mo | Higher limits in the web UI |
+| Claude Max | $100/mo | 5x Pro limits in web UI |
+| Claude Max (high) | $200/mo | 20x Pro limits in web UI |
+| ChatGPT Plus | $20/mo | GPT-4o access in web UI |
+| ChatGPT Pro | $200/mo | o1, o3, GPT-5.4 + generous limits in web UI |
 
-| Plan | Price | What you get |
-|------|-------|-------------|
-| Claude.ai Pro | $20/mo | Usage via web/app, not API |
-| Claude Max | $100-200/mo | Higher limits via web/app |
-| ChatGPT Plus | $20/mo | GPT-4o access via web/app |
-| ChatGPT Pro | $200/mo | o1 + higher limits via web/app |
+**The critical distinction**: Subscription plans give you access to the *web interface*. They do **not** reduce your API costs when you're running agents programmatically. Building with Claude Code or running automated agents? You're using the API — subscriptions don't help.
 
-**Important distinction**: Subscription plans give you access to the *web interface*. They do NOT reduce your API costs when building agents. If you're coding with Claude Code or running automated agents, you're using the API — subscriptions don't help here.
+**Except... there's a way.**
 
-**Exception**: Claude Code has its own pricing model — see [claude.ai/code](https://claude.ai/code) for current subscription options that include Claude Code usage.
+---
+
+## Using Subscription Tokens in Agents
+
+This is one of the most interesting cost-saving approaches in the agent community — and it's worth understanding clearly.
+
+### The Concept
+
+Your Claude Max or ChatGPT Pro subscription gives you a generous token budget for web-based usage. What if you could route your agent's calls through that subscription instead of paying API rates?
+
+### OpenAI: Officially Supported ✅
+
+OpenAI explicitly supports this. If you have a **ChatGPT Pro** subscription, you can:
+
+1. Generate a **subscription-based API key** (different from the pay-per-token API key)
+2. Use this key in your Claude Code or agent setup
+3. Your agent calls are charged against your subscription, not your pay-per-token API balance
+
+This means: a $200/month ChatGPT Pro subscription can power both your interactive ChatGPT use AND automated agent tasks, up to the subscription's rate limits.
+
+Setup: go to platform.openai.com → API keys → create key associated with your Pro subscription.
+
+### Anthropic/Claude: Gray Area ⚠️
+
+Anthropic does **not** officially support using your Claude Max subscription token in external tools. However:
+
+- **What exists**: Claude Code is Anthropic's own product, and when you use it with a Claude Max subscription, you're running Claude Code "on behalf of" your subscription. This is explicitly supported.
+- **The gray area**: Some users extract the session auth token from their Claude.ai browser session and use it in API calls. This technically works, but violates Anthropic's terms of service for most use cases.
+- **The legitimate path**: Use Claude Code's built-in Max subscription support — if you have Claude Max, Claude Code will use it. This is the intended workflow.
+
+**Bottom line for Claude:**
+- ✅ Claude Code + Claude Max subscription → explicitly supported, Claude Code is designed for this
+- ❌ Manually extracting session tokens and using them in custom scripts → against ToS
+- 🔄 This is an evolving area — Anthropic is likely to formalize more options here
+
+### Practical Decision
+
+If you're choosing between **Claude API pay-per-token** vs **subscription + Claude Code**:
+
+| Approach | Monthly Cost | Token Budget | Good For |
+|----------|-------------|-------------|---------|
+| API pay-per-token | $20-150+ depending on use | Unlimited (pay more, get more) | Building custom agents, scripts |
+| Claude Max ($100/mo) + Claude Code | $100 flat | High (subscription limits) | Interactive agent work, development |
+| ChatGPT Pro ($200/mo) + API key | $200 flat | Generous limits | Heavy users wanting predictable cost |
+
+For most people starting out: **pay-per-token API** with sensible context engineering is the most flexible. Move to subscription-based once you know your usage pattern.
 
 ---
 
 ## The Real Cost of Running Agents
 
-This is where people get surprised. An "always-on" agent with a large context window can get expensive fast.
+This is where people get surprised. An always-on agent with a large context window can get expensive fast.
 
-### Why context windows matter for cost
+### Why context windows drive cost
 
 Every time your agent responds, it sends:
+- Your entire system prompt / CLAUDE.md
 - The full conversation history
-- Your CLAUDE.md / system prompt
 - Any files or data it has loaded
 
-If your CLAUDE.md is 2,000 tokens, your conversation history is 10,000 tokens, and you ask a simple question — you're sending 12,000 tokens as input just for that one exchange.
+**Example cost calculation (Claude Sonnet 4.6):**
+\`\`\`
+System prompt:  2,000 tokens
+Conversation:  10,000 tokens  
+Your question:    200 tokens
+Total input:   12,200 tokens
 
-**Example cost calculation:**
-```
-Simple question with context:
-- Input: 12,000 tokens (history + system prompt + question)
-- Output: 500 tokens (answer)
-- Cost with Claude Sonnet 4.6: (12,000 × $3 + 500 × $15) / 1,000,000
-- = $0.036 + $0.0075 = ~$0.044 per exchange
+Output:           800 tokens
 
-50 exchanges/day × $0.044 = ~$2.20/day = ~$66/month
-```
+Cost: (12,200 × $3 + 800 × $15) / 1,000,000
+    = $0.0366 + $0.012
+    = ~$0.049 per exchange
+\`\`\`
 
-That's for moderate use. An always-on agent with heavy use (hundreds of exchanges/day, large system prompts) can easily reach $200-500/month.
+50 exchanges/day × $0.049 = ~$2.45/day = **~$74/month** from context alone.
 
-### Real-world usage reports
+That's for moderate use. Heavy users with large system prompts and hundreds of daily exchanges report $200-500+/month.
 
-From Twitter/X users running always-on agents:
-- Light use (10-20 queries/day, small context): $15-40/month
-- Moderate use (50-100 queries/day, medium context): $50-150/month
-- Heavy use (hundreds of queries, large context, complex tasks): $200-500+/month
+### Real-world usage reports (from the community)
+
+| Usage Pattern | Monthly Cost (API) |
+|--------------|-------------------|
+| Experimenting, 10-20 queries/day | $5-25 |
+| Regular use, small context | $20-60 |
+| Always-on agent, medium context | $60-150 |
+| Heavy automation, large context | $200-500+ |
+
+These are API costs. Claude Code with Claude Max subscription changes these numbers significantly for interactive use.
 
 ---
 
-## Context Engineering: How to Control Costs
+## Context Engineering: Control Your Costs
 
-The biggest lever: **control your context window size**.
+The biggest lever you have.
 
 ### 1. Keep your CLAUDE.md lean
-Every byte in your system prompt costs money on every single API call. A 10,000-token CLAUDE.md at 100 queries/day costs ~$9/day just for the system prompt.
 
-**Good CLAUDE.md**: 500-1,500 tokens — essential info only
-**Expensive CLAUDE.md**: 5,000-20,000 tokens — the agent "reads a book" every exchange
+Every byte in your system prompt costs money on **every single API call**. 
 
-### 2. Use context compaction
-Claude Code has automatic context compaction — when the conversation gets long, it summarizes old turns. Let this work. Don't fight it.
+- ✅ Good CLAUDE.md: 500-1,500 tokens — essential context only
+- ❌ Expensive CLAUDE.md: 5,000-20,000 tokens — costs ~$30-120/month just for the system prompt at moderate use
 
-For always-on agents: design sessions to be short and focused, not one endless conversation.
+**Tip**: Write your CLAUDE.md, then cut 50%. Then cut another 30%. The agent works better with focused, essential context than a wall of text.
+
+### 2. Prompt caching
+
+Anthropic's API automatically caches repeated identical prefixes. If your CLAUDE.md + system prompt stays the same across calls, subsequent calls pay a fraction (typically 10% of input cost) for the cached portion.
+
+**How much this saves**: On a 5,000-token system prompt with 100 daily calls:
+- Without caching: 100 × 5,000 × $3/1M = $1.50/day
+- With caching: ~$0.15/day for cached tokens
+- **Savings: ~$40/month from this one optimization**
+
+This happens automatically with the Anthropic API. No setup required.
 
 ### 3. Model routing
-Use cheap models for simple tasks, expensive models for complex ones:
-```
-Routing question → Haiku 3.5 (cheap)
-Writing code → Sonnet 4.6 (good balance)
-Complex reasoning → Opus 4.5 (worth it)
-```
 
-### 4. Prompt caching
-Anthropic's API supports prompt caching — repeated identical system prompts are cached and cost much less on subsequent calls. If your agent always starts with the same CLAUDE.md, you can save 50-90% on input costs.
+Not every task needs the most expensive model:
 
-### 5. Set hard limits
-In [console.anthropic.com](https://console.anthropic.com): set a monthly spending cap. $50 is a good starting limit. Raise it once you know your usage pattern.
+\`\`\`
+Routing/classification → Haiku 3.5 (cheap, fast)
+Regular coding/writing → Sonnet 4.6 (good balance)
+Complex reasoning → Opus 4.5 (worth it for hard problems)
+\`\`\`
 
----
+Using Haiku for 70% of calls and Sonnet for 30% can cut costs by 50-70% vs. using Sonnet for everything.
 
-## Subscription Limits: What You Actually Get
+### 4. Session design
 
-If you pay for subscriptions (not API), here's what the limits look like in practice:
+For always-on agents: design sessions to be focused and short, not one endless conversation. Compaction (automatic summarization of old turns) helps, but starting fresh regularly is cheaper.
 
-| Plan | Claude Code Access | Web Usage | API |
-|------|-------------------|-----------|-----|
-| Free | No | Limited | Separate |
-| Claude.ai Pro ($20/mo) | Limited | 5x more than free | Separate |
-| Claude Max ($100/mo) | More | 5x Pro | Separate |
-| Claude Max ($200/mo) | Most | 20x Pro | Separate |
+### 5. Set hard spending limits
 
-**GPT Pro ($200/mo)** is notably more generous for interactive use than Claude Max at the same price — you get o1, o3, GPT-4.5, Sora video, and more generous limits. But for API-based agent building, the comparison doesn't matter — you pay per token regardless.
+In [console.anthropic.com](https://console.anthropic.com) → Settings → Limits: set a monthly hard cap.
+
+**Start with $30-50**. Raise it once you understand your actual usage pattern. An uncapped agent in a loop can burn through hundreds of dollars before you notice.
 
 ---
 
 ## Local Models: The Free Alternative
 
-For high-volume tasks where quality matters less than cost, local models are worth knowing about.
+For high-volume tasks where quality can be lower, local models cost nothing per call.
 
-**Ollama** (recommended for beginners):
-```bash
-# Install Ollama
+**Ollama** — easiest to get started:
+\`\`\`bash
+# Install (Mac/Linux)
 curl -fsSL https://ollama.ai/install.sh | sh
 
 # Download and run a model
-ollama pull llama3.2
-ollama run llama3.2
-```
+ollama pull llama3.3
+ollama run llama3.3
+\`\`\`
 
-**What you can run locally (2026):**
-- **Llama 3.3 70B**: Strong general capability, needs ~40GB RAM
-- **Llama 3.2 3B**: Fast, light, good for simple tasks, needs 4GB RAM
-- **Mistral 7B**: Balanced, 8GB RAM
-- **Qwen 2.5 Coder 32B**: Excellent for coding, 20GB RAM
+**LM Studio** — GUI interface, no terminal required, download from [lmstudio.ai](https://lmstudio.ai)
 
-**LM Studio**: GUI interface for local models, easier for non-coders
+**What runs locally in 2026:**
+| Model | RAM Needed | Quality | Best For |
+|-------|-----------|---------|---------|
+| Llama 3.3 70B | ~40GB | Strong | General tasks if you have the hardware |
+| Qwen 2.5 Coder 32B | ~20GB | Excellent for code | Local coding agent |
+| Mistral 7B | ~8GB | Decent | Simple tasks, routing |
+| Llama 3.2 3B | ~4GB | Basic | Summarization, classification |
 
 **The honest tradeoff:**
-- Local models: free per call, private, slower, lower quality than frontier models
-- API models: costs money, potentially private (check provider policies), fast, high quality
+- Local: free per call, private, requires good hardware, lower quality
+- API: costs money, fast, consistently high quality, no hardware requirements
 
-For most agent tasks, API models (especially Sonnet-tier) are worth the cost. Use local models for: high-volume low-stakes tasks, when privacy is critical, or when you hit cost limits.
+Most serious setups use API models for the main agent work and local models for specific high-volume or privacy-sensitive sub-tasks.
 
 ---
 
 ## Quick Cost Estimator
 
-Roughly what your setup will cost per month:
+| Your Situation | Recommended Model | Estimated Monthly API Cost |
+|---------------|------------------|--------------------------|
+| Just learning, occasional use | Sonnet 4.6 | $5-20 |
+| Daily personal use, light context | Sonnet 4.6 | $20-60 |
+| Always-on assistant, moderate use | Sonnet 4.6 + Haiku routing | $50-150 |
+| Heavy automation, many tasks | Mixed routing | $100-300 |
+| + Claude Max subscription | Claude Code on subscription | Subscription cost + overflow API |
 
-| Usage Pattern | Model Choice | Estimated Monthly Cost |
-|---------------|-------------|----------------------|
-| Learning/experimenting | Sonnet 4.6 | $5-20 |
-| Daily personal agent (light) | Sonnet 4.6 | $20-60 |
-| Always-on assistant (moderate) | Sonnet 4.6 + Haiku 3.5 routing | $40-120 |
-| Heavy automation (many tasks) | Mixed routing | $100-300 |
-| Enterprise/team | Depends on usage | $300+ |
+*These numbers assume sensible context engineering. Ignoring context size can 3-5x these estimates.*
 
-These numbers assume sensible context engineering. Ignoring context size can easily 3-5x these estimates.
-
----
-
-*Check current pricing at [anthropic.com/pricing](https://anthropic.com/pricing) — prices change as models improve.*
+*Check current pricing at [anthropic.com/pricing](https://anthropic.com/pricing) and [openai.com/pricing](https://openai.com/pricing) — prices change regularly.*
