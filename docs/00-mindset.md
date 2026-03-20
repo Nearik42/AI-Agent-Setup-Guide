@@ -1,3 +1,8 @@
+---
+title: "🧠 Why AI Agents?"
+nav_order: 1
+---
+
 # Why AI Agents? (And Why Not Just ChatGPT?)
 
 You already use ChatGPT. Maybe Claude, Gemini, Perplexity. So why build an "agent"?
