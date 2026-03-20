@@ -151,7 +151,7 @@ After completing a task, update the memory file (CLAUDE.md) if anything importan
     # Agent loop
     while True:
         response = client.messages.create(
-            model="claude-sonnet-4-5",
+            model="claude-sonnet-4-6",
             max_tokens=4096,
             system=system_prompt,
             tools=TOOLS,
