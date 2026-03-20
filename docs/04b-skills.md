@@ -1,3 +1,8 @@
+---
+title: "🎯 Skills"
+nav_order: 8
+---
+
 # Skills: Giving Your Agent Superpowers
 
 A skill is a pre-built behavior module that tells your agent *how* to do something. Instead of explaining from scratch every time, you define the skill once — and the agent knows when and how to use it.
