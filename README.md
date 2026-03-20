@@ -32,7 +32,7 @@ You are a good fit if you:
 ### 🔧 Building Your Setup
 | Chapter | What You'll Learn |
 |---------|-------------------|
-| [🔒 Permissions & Security](docs/03-permissions-and-security.md) | Dont give your agent root access |
+| [🔒 Permissions & Security](docs/03-permissions-and-security.md) | Don't give your agent root access |
 | [🧠 Persistent Memory](docs/04-persistent-memory.md) | Agent that remembers you |
 | [🎯 Skills](docs/04b-skills.md) | Giving your agent superpowers |
 | [📱 Always-On Agent](docs/05-always-on-agent.md) | Telegram & Discord integration |
