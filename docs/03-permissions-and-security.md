@@ -291,3 +291,92 @@ This way, even if one agent is compromised or makes a mistake, the damage is con
 ---
 
 [← 💰 Models & Costs](02b-models-and-costs.md) · [📚 Table of Contents](../README.md) · [🧠 Persistent Memory →](04-persistent-memory.md)
+
+
+---
+
+## ⚠️ The Real Danger: `rm -rf` and Destructive Commands
+
+This is not hypothetical. AI agents running with unrestricted permissions have caused real data loss.
+
+### What Can Go Wrong
+
+When an agent has full system access and no guardrails, a single misunderstood instruction can trigger:
+
+```bash
+rm -rf /var/www/html        # Deletes entire website
+rm -rf ~/projects           # Deletes all your work
+rm -rf /                    # Deletes the entire filesystem (yes, agents have done this)
+DROP TABLE users;           # Deletes your entire user database
+git push --force origin main  # Overwrites production with broken code
+```
+
+The agent doesn't hesitate. It doesn't double-check. It executes.
+
+### Real Incidents
+
+**The "clean up unused files" disaster:**
+A developer asked their agent to "clean up unused files in the project." The agent — running with `--dangerously-skip-permissions` on the production server — interpreted old log files, user uploads, and a backup directory as "unused." It deleted 40GB of user data in 90 seconds. No undo. No recycle bin. Gone.
+
+**The "refactor the database" incident:**
+An agent tasked with "removing duplicate entries from the database" wrote and executed a SQL script that was off by one in its logic. It deleted 60% of the production database before the developer noticed the CPU spike. Recovery took 6 hours and cost $4,000 in emergency consulting.
+
+**The infinite loop bill:**
+An agent was set up to "monitor the API and retry failed requests." A bug in the retry logic caused it to loop — making 50,000 API calls in 3 minutes and generating a $2,800 bill before the spending limit kicked in.
+
+These are not edge cases. They are the predictable outcome of unrestricted agents.
+
+---
+
+## The Defense: Backups First, Always
+
+Before you give any agent access to anything important:
+
+### 1. VPS/Server Snapshots
+Most VPS providers offer one-click snapshots:
+- **Hetzner**: Server → Backups → Enable automatic backups (€0.80/month for a CX22)
+- **DigitalOcean**: Droplet → Backups → Enable (20% of droplet cost)
+
+Enable this **before** your first agent session on a server. A snapshot from 24 hours ago is the difference between "minor incident" and "days of recovery."
+
+### 2. Database Backups
+```bash
+# Add to crontab — runs every night at 2am
+0 2 * * * pg_dump mydb > /backups/mydb_$(date +%Y%m%d).sql
+0 2 * * * mysqldump mydb > /backups/mydb_$(date +%Y%m%d).sql
+```
+
+### 3. Git Before Everything
+Before any agent session that touches code:
+```bash
+git add -A && git commit -m "pre-agent snapshot $(date)"
+```
+Takes 5 seconds. Gives you a rollback point.
+
+### 4. Never Run Agents as Root
+```bash
+# Bad: agent running as root
+sudo claude --dangerously-skip-permissions
+
+# Good: agent running as restricted user
+useradd -m agentuser
+su agentuser -c "claude --dangerously-skip-permissions"
+```
+
+Root access means `rm -rf /` works. Non-root access means it fails safely.
+
+### 5. Explicitly Forbid Destructive Commands in CLAUDE.md
+```markdown
+## Commands I am NEVER allowed to run:
+- rm -rf (any variant)
+- DROP TABLE or DROP DATABASE
+- git push --force
+- Any command that deletes files without explicit confirmation
+- sudo or su (no privilege escalation)
+
+## Before deleting anything:
+Always ask for confirmation first, even in bypass mode.
+```
+
+---
+
