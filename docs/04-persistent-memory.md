@@ -1,3 +1,8 @@
+---
+title: "🧠 Persistent Memory"
+nav_order: 7
+---
+
 # Persistent Memory: The Agent That Remembers You
 
 Every Claude Code session starts fresh. But what if it could remember your projects, preferences, and decisions from previous sessions?
