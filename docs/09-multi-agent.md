@@ -1,3 +1,8 @@
+---
+title: "🤖 Multi-Agent Architecture"
+nav_order: 15
+---
+
 # Multi-Agent Architecture: The Full System
 
 One agent is useful. Multiple agents are powerful. This chapter covers why you'd want more than one, how to coordinate them, and what a real multi-agent setup looks like.
