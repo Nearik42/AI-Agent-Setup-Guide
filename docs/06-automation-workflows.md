@@ -1,5 +1,6 @@
 # Automation & Workflows: Your Agent Works While You Sleep
 
+> 💡 **You don't need to type any of this yourself.** Once Claude Code is running, paste this chapter's instructions and say *"set this up for me"* — it reads the guide and executes the commands on your behalf. The code blocks below are what Claude Code runs, not what you type.
 You've got an agent that remembers things and responds to messages. Now let's make it proactive.
 
 Automation means your agent does things on a schedule — without you asking. Morning briefings, weekly reports, code health checks. You set it up once, it runs forever.
