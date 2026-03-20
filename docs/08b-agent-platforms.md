@@ -1,8 +1,3 @@
----
-title: "🌐 Platform Landscape"
-nav_order: 13
----
-
 # The Agent Platform Landscape: OpenClaw Alternatives & Competitors
 
 So you've been using OpenClaw and it clicked. Or maybe you're still evaluating — wondering if there's something out there that fits your situation better. Either way: the agent platform space exploded in 2025/2026, and it's worth knowing what exists.
