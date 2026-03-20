@@ -233,3 +233,7 @@ echo "$(date): morning brief sent" >> ~/logs/agent.log
 Your agent now works on a schedule. It's proactive, not just reactive.
 
 Before we add frameworks, let's understand how all of this works under the hood. Next chapter: build a minimal agent from scratch, so you understand what frameworks are actually doing.
+
+---
+
+[← 📱 Always-On Agent](05-always-on-agent.md) · [📚 Table of Contents](../README.md) · [🔧 Build Your Own Agent →](07-custom-agent-diy.md)
