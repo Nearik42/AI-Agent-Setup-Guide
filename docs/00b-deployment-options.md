@@ -47,9 +47,9 @@ A small rented server (€4-15/month) that runs 24/7 — even when your laptop i
 **Popular providers:**
 | Provider | Cheapest Server | RAM | Good for |
 |----------|----------------|-----|---------|
-| Hetzner CX22 | €4.15/mo | 4GB | Personal agents, always-on bots |
-| DigitalOcean Droplet | $6/mo | 1GB | Beginners, simple bots |
-| Hetzner CX32 | €8.15/mo | 8GB | Multiple agents, more memory |
+| [Hetzner](https://www.hetzner.com/cloud) CX22 | €4.15/mo | 4GB | Personal agents, always-on bots |
+| [DigitalOcean](https://digitalocean.com) Droplet | $6/mo | 1GB | Beginners, simple bots |
+| [Hetzner](https://www.hetzner.com/cloud) CX32 | €8.15/mo | 8GB | Multiple agents, more memory |
 | Hetzner CCX23 (dedicated) | €22/mo | 8GB dedicated | Production workloads |
 
 **When to use it:**
