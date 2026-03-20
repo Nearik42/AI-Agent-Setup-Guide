@@ -1,8 +1,3 @@
----
-title: "🏗️ Agent Frameworks"
-nav_order: 12
----
-
 # Agent Frameworks: Choosing the Right Tool
 
 You've built a minimal agent from scratch. You understand the loop. Now let's talk about what frameworks actually give you — and which one you should use.
