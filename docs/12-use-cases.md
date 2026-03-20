@@ -222,6 +222,109 @@ Note-taking assistants and calendar summaries get all the press. Here's what's a
 
 ---
 
+
+---
+
+## 13. Website Portfolio Manager & Debug Agent
+**Difficulty: ⭐⭐⭐ Advanced** | **Perfect for: anyone running multiple content sites**
+
+If you build and operate multiple websites — niche directories, affiliate sites, content hubs — managing them manually doesn't scale. An agent changes this.
+
+**Scenario:** You've built a directory of all swimming schools in Germany, another for dog training schools, another for cooking classes. Each gets traffic, earns affiliate revenue or lead fees. You have 10 sites. Then 20. Then 50. You can't manually check them all.
+
+**What the agent does:**
+
+*Monitoring:*
+- Checks all sites daily for broken links, 404 errors, slow load times
+- Monitors Google Search Console for ranking drops, crawl errors, manual penalties
+- Alerts you on Telegram when something needs attention
+- Auto-fixes common issues (broken internal links, missing meta tags) via PR
+
+*Content optimization:*
+- Analyzes which pages get traffic but don't convert → suggests improvements
+- Identifies missing content opportunities (keywords competitors rank for, you don't)
+- Monitors competitor sites for new content in your niches
+- Drafts content updates for your review
+
+*SEO maintenance:*
+- Monitors backlink profile for toxic links
+- Tracks ranking changes for target keywords
+- Suggests internal linking improvements
+
+**How to build it:**
+1. Google Search Console API → export site health data daily
+2. Screaming Frog or similar for crawl errors (or build a lightweight Python crawler)
+3. Claude analysis: "Flag anything that needs human attention"
+4. Telegram alert system for urgent issues, weekly summary report for the rest
+
+**The scale advantage:** One agent monitoring 50 sites costs the same as monitoring 1 site. Your operational overhead stays flat as you grow.
+
+---
+
+## 14. Inbound Request Handler (Email, Messenger, Forms)
+**Difficulty: ⭐⭐ Intermediate** | **Perfect for: marketplace/directory operators**
+
+You've built a directory of dog training schools in Germany. It gets traffic. Dog trainers start finding it and want to be listed, submit their content, update their profiles, ask questions.
+
+At 10 requests a week: you handle it manually.
+At 100 requests a week: you're drowning.
+At 1,000 requests a week: you need a system.
+
+**What the agent does:**
+- Reads incoming emails/form submissions/Messenger messages
+- Classifies: "new listing request" / "content update" / "billing question" / "spam"
+- For listing requests: validates the business is real (Google Maps lookup, website check), sends confirmation, adds to review queue
+- For content updates: verifies the sender is the business owner, formats content, creates a draft update for your approval
+- For common questions: responds automatically with the right answer
+- Escalates genuinely complex cases to you with context
+
+**Example flow for a dog training school submission:**
+1. School emails: "Hi, I'd like to be listed on your site. We offer..."
+2. Agent checks: Does this business exist? Website? Google Maps? Legitimate?
+3. Agent responds: "Thanks! We've received your submission. We'll review within 48 hours. In the meantime, could you provide..."
+4. Agent creates a structured draft in your CMS review queue
+5. You review and approve in 30 seconds instead of spending 10 minutes processing it yourself
+
+**How to build it:**
+1. Email API (Gmail API or similar) or form webhook → Claude classification
+2. Google Maps / Places API for business validation
+3. Structured output → your CMS or database
+4. Telegram notification for items requiring your attention
+
+**The business model impact:** This is the difference between a directory that caps at "what you can personally manage" and one that can scale to thousands of listings with the same operational overhead.
+
+---
+
+## 15. Discovery Pipeline Agent (Rapid Idea Testing)
+**Difficulty: ⭐⭐ Intermediate** | **Impact: ship 5x more ideas**
+
+You have ideas faster than you can evaluate them. A new niche directory, a new affiliate angle, a new content format. Most won't work. The ones that do need to be identified fast.
+
+**The problem:** Evaluating each idea properly takes hours of research. So most ideas die in your head.
+
+**What the agent does:**
+Runs each idea through a structured 5-phase evaluation in 20-30 minutes:
+
+1. **Problem check** — Is there real search demand? Who's looking for this?
+2. **Market research** — Who already exists in this space? How strong are they?
+3. **Opportunity assessment** — Where are the gaps? What's underserved?
+4. **Quick business model** — How would this make money? What's realistic?
+5. **Go/No-Go** — Structured recommendation with reasoning
+
+**Example:** You think "directory of all dog groomers in Germany, filterable by specialty"
+- Agent researches: search volume for related terms, existing directories (strength?), monetization options (lead gen? listings? affiliate?)
+- 25 minutes later: "Viable. Search demand exists (8,400/mo for core terms). Main competitor is weak (DA 22, thin content). Revenue model: €29/month listing fee, 500 listing target = €14,500/month potential. Recommend building MVP in 2 weeks."
+
+**How to build it:**
+1. Tavily/Perplexity for market research
+2. Claude as the analyst/synthesizer
+3. Structured output template (the 5-phase report)
+4. Store results in a simple database so you can compare across ideas
+
+**Why this matters:** The bottleneck for most small operators isn't having good ideas — it's evaluating them fast enough to know which ones to pursue. This agent turns a 3-hour research session into a 25-minute automated analysis, letting you test 5x more ideas in the same time.
+
+> 💬 **Related:** The [Discovery Pipeline skill](04b-skills.md) is the framework that powers this — you can use it interactively or let the agent run it autonomously.
+
 ## Building Your First Use Case
 
 Three paths depending on where you're starting:
