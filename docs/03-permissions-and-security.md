@@ -2,6 +2,8 @@
 
 This chapter is boring but important. Skip it and you might accidentally let an agent delete important files or push secrets to GitHub.
 
+See the [official Claude Code security docs](https://docs.anthropic.com/en/docs/claude-code/security) for the full reference.
+
 ---
 
 ## The Four Permission Modes
@@ -66,6 +68,8 @@ If you're running a background agent (overnight task, scheduled job), "ask every
 
 For autonomous work: you need `bypassPermissions`. But that means you need a safety net.
 
+> 💬 **Community:** [@Voxyz_ai](https://x.com/Voxyz_ai/status/2032821550651785611) — "The real unlock is trusting the agent to run unsupervised — trust isn't faith, it's config." The permission model is your config.
+
 ---
 
 ## What Can Go Wrong?
@@ -118,7 +122,7 @@ docker run -it --rm \
 ```
 
 ### Option 3: VPS (For Production Agents)
-Run your agent on a separate server. If something goes wrong, it's isolated from your main machine. This is what serious setups use. (We cover this in later stages.)
+Run your agent on a separate server. If something goes wrong, it's isolated from your main machine. This is what serious setups use. (We cover this in later stages.) Good options: [Hetzner Cloud](https://www.hetzner.com/cloud) or [DigitalOcean](https://digitalocean.com).
 
 ---
 
@@ -140,8 +144,10 @@ claude --version  # Check if sandboxing is mentioned
 - [ ] API key is in `.env` file, not hardcoded
 - [ ] `.env` is in `.gitignore`
 - [ ] Never pasted key into a chat or email
-- [ ] Set spending limits in Anthropic console
+- [ ] Set spending limits in [Anthropic console](https://console.anthropic.com)
 - [ ] Created separate keys for different projects
+
+Get or manage your API keys at [console.anthropic.com](https://console.anthropic.com).
 
 ---
 
@@ -177,7 +183,7 @@ This is the principle: trust flows down, but permissions don't automatically cas
 - **Default mode** for exploration: always safe
 - **bypassPermissions** only with isolation: Docker, VPS, or dedicated folder
 - **API keys**: `.env` file, always
-- **Spending limits**: Set them in the Anthropic console now
+- **Spending limits**: Set them in the [Anthropic console](https://console.anthropic.com) now
 
 With that sorted, let's give your agent a memory.
 
@@ -252,7 +258,7 @@ chmod +x .git/hooks/pre-commit
 
 ### 5. Spending Limits — Set in Anthropic Console
 
-- Go to console.anthropic.com → Billing → Usage Limits
+- Go to [console.anthropic.com](https://console.anthropic.com) → Billing → Usage Limits
 - Set monthly hard limit ($20-50 is reasonable for personal use)
 - Enable email alerts at 80% usage
 
