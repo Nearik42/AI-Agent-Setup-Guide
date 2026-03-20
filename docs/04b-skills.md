@@ -224,3 +224,7 @@ A good rule of thumb: if you find yourself giving the same instructions more tha
 5. **Test it** — ask your agent to perform the task and see if it follows the skill
 
 Your first skill doesn't have to be perfect. The point is to start documenting your processes so your agent can handle them reliably.
+
+---
+
+[← 🧠 Persistent Memory](04-persistent-memory.md) · [📚 Table of Contents](../README.md) · [📱 Always-On Agent →](05-always-on-agent.md)
