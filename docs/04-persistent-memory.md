@@ -4,6 +4,8 @@ Every Claude Code session starts fresh. But what if it could remember your proje
 
 That's what this chapter is about.
 
+> 💬 **Community:** [@AndrewYNg](https://x.com/AndrewYNg/status/2034314027678192114) — "New course: Agent Memory: Building Memory-Aware Agents" — memory is one of the most critical topics in agent design.
+
 ---
 
 ## The Problem
@@ -22,7 +24,7 @@ With memory:
 
 ## The CLAUDE.md Pattern
 
-Claude Code automatically reads `CLAUDE.md` if it exists in the current folder. This is your project memory.
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code/) automatically reads `CLAUDE.md` if it exists in the current folder. This is your project memory.
 
 **Create your first one:**
 ```bash
@@ -92,6 +94,8 @@ cat > memory/$date_str.md << 'ENDMD'
 ENDMD
 ```
 
+> 💬 **Community:** [@akshay_pachaar](https://x.com/akshay_pachaar/status/2030306809697935556) — "Files are all you need! Research paper says best way to manage AI context is treat everything like a file system." That's exactly what this pattern does.
+
 ---
 
 ## Telling Claude to Update Its Own Memory
@@ -113,7 +117,11 @@ Now the agent maintains its own memory. Over time, it becomes more useful as it 
 
 ## The Obsidian Pattern (Advanced)
 
-Some people connect their agent to Obsidian (a note-taking app). The agent reads and writes Obsidian notes, treating your knowledge base as its memory. Referenced from: @om_patel5 and @micLivs on Twitter.
+Some people connect their agent to Obsidian (a note-taking app). The agent reads and writes Obsidian notes, treating your knowledge base as its memory.
+
+> 💬 **Community:** [@om_patel5](https://x.com/om_patel5/status/2033745489888149585) — "This guy got tired of re-explaining his entire project to Claude Code every single session... used Obsidian and built a vault." The vault becomes your agent's long-term memory.
+
+> 💬 **Community:** [@micLivs](https://x.com/micLivs/status/2033605835092312491) — "Introducing napkin 🧻 (Agents + Obsidian + a CLI tailored for agents)" — makes the Obsidian integration easy.
 
 Tools like **napkin** make this easier — it's essentially Obsidian + an agent-optimized CLI. But CLAUDE.md is simpler and works fine for most people.
 
@@ -133,6 +141,10 @@ For complex projects, split memory across files:
 ```
 
 Claude Code automatically includes files in `.claude/rules/` based on what you're working on.
+
+> 💬 **Community:** [@steipete](https://x.com/steipete/status/2032861327967072671) — "Lot of cool stuff being built around openclaw. If the stock memory feature isn't great" — the community is building custom memory layers. The modular approach above is a solid foundation.
+
+> 💬 **Community:** [@bradmillscan](https://x.com/bradmillscan/status/2030704330043507005) — "Replace your OpenClaw Agent's aggressive compaction process with a DAG to supercharge memory" — for when you need more than flat files.
 
 ---
 
