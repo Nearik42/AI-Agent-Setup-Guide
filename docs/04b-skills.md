@@ -94,7 +94,7 @@ Phase 5: Tech Spec — how to build it
 
 This is not a chat session. It's a structured process your agent follows every time, producing consistent, high-quality outputs.
 
-**See it in action:** The [PM Orchestrator skills collection](https://github.com/Nearik42/AI-Agent-Setup-Guide/tree/main/skills) includes SWOT analysis, Lean Canvas, Value Proposition, and more.
+**See it in action:** PM Orchestrator-style skills include SWOT analysis, Lean Canvas, Value Proposition, and more — all structured as skill files your agent follows consistently.
 
 ### Product Management Skills
 
