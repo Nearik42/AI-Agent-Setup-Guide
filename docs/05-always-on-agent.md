@@ -1,5 +1,6 @@
 # Always-On Agent: Telegram & Discord
 
+> 💡 **You don't need to type any of this yourself.** Once Claude Code is running, paste this chapter's instructions and say *"set this up for me"* — it reads the guide and executes the commands on your behalf. The code blocks below are what Claude Code runs, not what you type.
 Right now your agent only works when you open a terminal. Let's change that.
 
 With a messaging integration, you can:
