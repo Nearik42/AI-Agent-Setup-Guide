@@ -1,5 +1,6 @@
 # Build Your Own Agent: From Scratch
 
+> 💡 **You don't need to type any of this yourself.** Once Claude Code is running, paste this chapter's instructions and say *"set this up for me"* — it reads the guide and executes the commands on your behalf. The code blocks below are what Claude Code runs, not what you type.
 Before you pick a framework, build one yourself. Not because you'll use it in production — you probably won't. But because understanding how agents actually work makes you dramatically better at using them.
 
 This chapter builds a minimal but real agent in ~100 lines of Python. It has memory, messaging integration, and scheduled checks. It's basically a tiny OpenClaw.
