@@ -181,3 +181,7 @@ Know your constraints (data sensitivity, budget, technical comfort, existing eco
 ---
 
 *Next: [Framework Deep Dive →](08c-framework-deep-dive.md) — how these frameworks actually work under the hood, what can go wrong, and what people are building with them.*
+
+---
+
+[← 🏗️ Agent Frameworks](08-frameworks.md) · [📚 Table of Contents](../README.md) · [🔍 Framework Deep Dive →](08c-framework-deep-dive.md)
