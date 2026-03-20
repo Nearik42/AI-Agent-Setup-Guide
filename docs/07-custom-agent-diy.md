@@ -1,8 +1,3 @@
----
-title: "🔧 Build Your Own Agent"
-nav_order: 11
----
-
 # Build Your Own Agent: From Scratch
 
 Before you pick a framework, build one yourself. Not because you'll use it in production — you probably won't. But because understanding how agents actually work makes you dramatically better at using them.
