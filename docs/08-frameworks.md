@@ -185,3 +185,7 @@ Don't install OpenClaw on Day 1. You won't understand what it's doing or why. Yo
 ## Next Step
 
 You understand the frameworks. Now let's build the final layer: multiple agents working together.
+
+---
+
+[← 🔧 Build Your Own Agent](07-custom-agent-diy.md) · [📚 Table of Contents](../README.md) · [🌐 Platform Landscape →](08b-agent-platforms.md)
