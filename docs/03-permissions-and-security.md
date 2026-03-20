@@ -12,7 +12,7 @@ Claude Code has four ways to handle permissions:
 ```bash
 claude
 ```
-Every file write, every command â Claude asks before doing it. Safest. Also slowest. Best for learning.
+Every file write, every command — Claude asks before doing it. Safest. Also slowest. Best for learning.
 
 ### Mode 2: Accept Edits
 ```bash
@@ -43,10 +43,10 @@ Here's what actually happens in each mode during a real session:
 
 | Step | Ask Every Time | Accept Edits | Bypass/Dangerously Skip |
 |------|---------------|--------------|------------------------|
-| Read `app.py` | ✅ asks â you approve | ✅ silent | ✅ silent |
+| Read `app.py` | ✅ asks → you approve | ✅ silent | ✅ silent |
 | Analyze code | ✅ no approval needed | ✅ no approval needed | ✅ no approval needed |
-| Write updated `app.py` | ✅ asks â you approve (~3 sec) | ✅ silent | ✅ silent |
-| Run `python app.py` to test | ✅ asks â you approve (~3 sec) | ✅ asks â you approve | ✅ silent |
+| Write updated `app.py` | ✅ asks → you approve (~3 sec) | ✅ silent | ✅ silent |
+| Run `python app.py` to test | ✅ asks → you approve (~3 sec) | ✅ asks → you approve | ✅ silent |
 | Fix error, rewrite file | ✅ asks again (~3 sec) | ✅ silent | ✅ silent |
 | Run tests `pytest` | ✅ asks again | ✅ asks again | ✅ silent |
 | **Total human approvals needed** | **~6 interruptions** | **~2 interruptions** | **0 interruptions** |
@@ -58,7 +58,7 @@ Here's what actually happens in each mode during a real session:
 |------|-------------|------|
 | Ask Every Time | ~40+ approval prompts over 30 minutes. You become a rubber stamp. | Low but tedious |
 | Accept Edits | 5-10 approval prompts for shell commands only. Comfortable. | Low |
-| Bypass/Dangerously Skip | Zero prompts. 10 minutes. Done. | Medium â but manageable with Docker |
+| Bypass/Dangerously Skip | Zero prompts. 10 minutes. Done. | Medium — but manageable with Docker |
 
 ### The Real Cost of "Ask Every Time" for Automation
 
@@ -75,10 +75,10 @@ Real examples of what agents can do with too many permissions:
 **Accidental deletion**: "Clean up unused files" deletes something important
 **Git disasters**: "Push all changes" pushes to wrong branch, or with secrets in files
 **Infinite loops**: Agent creates files, sees them as "new context," creates more files
-**Cost explosions**: Agent calls an API in a loop â unexpected bill
+**Cost explosions**: Agent calls an API in a loop — unexpected bill
 **Secret exposure**: Agent reads `.env` file and includes contents in a commit message
 
-The solution isn't to be paranoid â it's to be intentional about what permissions you grant.
+The solution isn't to be paranoid — it's to be intentional about what permissions you grant.
 
 ---
 
@@ -125,8 +125,8 @@ Run your agent on a separate server. If something goes wrong, it's isolated from
 ## Claude Code's Built-in Sandbox (macOS/Linux)
 
 When sandboxing is enabled, Claude Code uses OS-level isolation:
-- **Linux**: Bubblewrap â restricts filesystem and network access
-- **macOS**: Apple Seatbelt â restricts what files/processes the agent can touch
+- **Linux**: Bubblewrap — restricts filesystem and network access
+- **macOS**: Apple Seatbelt — restricts what files/processes the agent can touch
 
 This is automatic on newer Claude Code versions. You can verify:
 ```bash
