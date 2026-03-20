@@ -1,8 +1,3 @@
----
-title: "🐦 Twitter/X Resources"
-nav_order: 16
----
-
 # Twitter/X Resources: Curated Bookmarks by Stage
 
 Real bookmarks from building an AI agent setup. Organized by topic so you can find the right resource at the right stage.
