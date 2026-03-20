@@ -1,8 +1,3 @@
----
-title: "🏠 Deployment Options"
-nav_order: 2
----
-
 # Where Does Your Agent Live? Deployment Options Explained
 
 Before you write a single prompt, there's one decision that shapes everything: **where does your agent actually run?**
