@@ -87,3 +87,7 @@ This guide takes you from zero to a working multi-agent system. Each stage is in
 **Stage 1 goal**: In 10 minutes, [Claude Code](https://docs.anthropic.com/en/docs/claude-code/) will write a Python script for you, read your files, and run terminal commands — all from your terminal. That's the first aha moment.
 
 Let's start.
+
+---
+
+[← Introduction](../README.md) · [📚 Table of Contents](../README.md) · [🏠 Deployment Options →](00b-deployment-options.md)
