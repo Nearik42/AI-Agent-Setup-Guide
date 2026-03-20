@@ -14,7 +14,7 @@ Note-taking assistants and calendar summaries get all the press. Here's what's a
 
 **Why it matters:** Professional due diligence is gated behind expensive advisors and analyst hours. This democratizes it for individual investors, solo founders, and small firms evaluating partners.
 
-**Real example:** Erik built exactly this — MA Advisor, running at port 3002, generates full structured reports on demand. The same tool investment banks charge thousands for.
+**Real example:** A Due Diligence tool built with Claude Code and this exact pattern generates full structured reports on demand. The same analysis investment banks charge thousands for.
 
 **How to build:**
 1. Set up Claude Code with [Perplexity](https://www.perplexity.ai/computer) or Tavily for web search
@@ -85,7 +85,7 @@ Note-taking assistants and calendar summaries get all the press. Here's what's a
 
 **Why it matters:** Researchers spend 30%+ of their time reading papers just to stay current. This cuts that significantly.
 
-**Real example:** Erik's Gooper-1 project uses lightkurve + ML to analyze Kepler space telescope data automatically — the agent monitors the pipeline, summarizes findings, and flags anomalies. It found 12 candidate exoplanet signals; 3 turned out to be real data anomalies worth investigating.
+**Real example:** A personal research agent using lightkurve + ML to analyze Kepler space telescope data automatically — the agent monitors the pipeline, summarizes findings, and flags anomalies. It found 12 candidate signals; 3 turned out to be real data anomalies worth investigating.
 
 **How to build:**
 1. arXiv API + paper scraper (semantic scholar also has a good API)
@@ -199,7 +199,7 @@ Note-taking assistants and calendar summaries get all the press. Here's what's a
 2. Structured review prompt with security checklist
 3. Bot posts review comments back to the PR
 
-**Reference:** Erik's auto-review system costs ~$0.35 per PR and has caught 3 critical security issues that would have shipped to production.
+**Reference:** An automated review system running this pattern costs ~$0.35 per PR and has caught critical security issues that would have shipped to production.
 
 ---
 
