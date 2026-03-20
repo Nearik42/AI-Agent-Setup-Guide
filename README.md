@@ -34,6 +34,7 @@ This is probably **not** for you if you want a pure no-code solution with zero t
 | 🌐 [Agent Platforms](docs/08b-agent-platforms.md) | Compare OpenClaw alternatives | "Now I know what's out there" |
 | 🔍 [Framework Deep Dive](docs/08c-framework-deep-dive.md) | How frameworks work + security + business | "I could build a business with this" |
 | Multi-Agent | Multiple agents collaborating | "This is the full system" |
+| 💡 [Use Cases](docs/12-use-cases.md) | Real-world applications with impact | "I know exactly what to build first" |
 
 ---
 

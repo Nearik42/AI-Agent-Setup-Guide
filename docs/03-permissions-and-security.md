@@ -12,7 +12,7 @@ Claude Code has four ways to handle permissions:
 ```bash
 claude
 ```
-Every file write, every command — Claude asks before doing it. Safest. Also slowest. Best for learning.
+Every file write, every command â Claude asks before doing it. Safest. Also slowest. Best for learning.
 
 ### Mode 2: Accept Edits
 ```bash
@@ -35,6 +35,39 @@ For running Claude Code inside scripts and automation pipelines. No interactive 
 
 ---
 
+## What Each Mode Feels Like in Practice
+
+Here's what actually happens in each mode during a real session:
+
+### Scenario: "Refactor this Python file and add error handling"
+
+| Step | Ask Every Time | Accept Edits | Bypass/Dangerously Skip |
+|------|---------------|--------------|------------------------|
+| Read `app.py` | ✅ asks â you approve | ✅ silent | ✅ silent |
+| Analyze code | ✅ no approval needed | ✅ no approval needed | ✅ no approval needed |
+| Write updated `app.py` | ✅ asks â you approve (~3 sec) | ✅ silent | ✅ silent |
+| Run `python app.py` to test | ✅ asks â you approve (~3 sec) | ✅ asks â you approve | ✅ silent |
+| Fix error, rewrite file | ✅ asks again (~3 sec) | ✅ silent | ✅ silent |
+| Run tests `pytest` | ✅ asks again | ✅ asks again | ✅ silent |
+| **Total human approvals needed** | **~6 interruptions** | **~2 interruptions** | **0 interruptions** |
+| **Total extra time** | **+2-3 minutes** | **+30 seconds** | **None** |
+
+### Scenario: "Build a complete web app with login, database, and deploy to Vercel"
+
+| Mode | What happens | Risk |
+|------|-------------|------|
+| Ask Every Time | ~40+ approval prompts over 30 minutes. You become a rubber stamp. | Low but tedious |
+| Accept Edits | 5-10 approval prompts for shell commands only. Comfortable. | Low |
+| Bypass/Dangerously Skip | Zero prompts. 10 minutes. Done. | Medium â but manageable with Docker |
+
+### The Real Cost of "Ask Every Time" for Automation
+
+If you're running a background agent (overnight task, scheduled job), "ask every time" means the agent **stops and waits** until you approve. Your 2am scheduled job? It's been sitting idle since 2:00:03am, waiting for a keypress you'll never give.
+
+For autonomous work: you need `bypassPermissions`. But that means you need a safety net.
+
+---
+
 ## What Can Go Wrong?
 
 Real examples of what agents can do with too many permissions:
@@ -42,10 +75,10 @@ Real examples of what agents can do with too many permissions:
 **Accidental deletion**: "Clean up unused files" deletes something important
 **Git disasters**: "Push all changes" pushes to wrong branch, or with secrets in files
 **Infinite loops**: Agent creates files, sees them as "new context," creates more files
-**Cost explosions**: Agent calls an API in a loop — unexpected bill
+**Cost explosions**: Agent calls an API in a loop â unexpected bill
 **Secret exposure**: Agent reads `.env` file and includes contents in a commit message
 
-The solution isn't to be paranoid — it's to be intentional about what permissions you grant.
+The solution isn't to be paranoid â it's to be intentional about what permissions you grant.
 
 ---
 
@@ -92,8 +125,8 @@ Run your agent on a separate server. If something goes wrong, it's isolated from
 ## Claude Code's Built-in Sandbox (macOS/Linux)
 
 When sandboxing is enabled, Claude Code uses OS-level isolation:
-- **Linux**: Bubblewrap — restricts filesystem and network access
-- **macOS**: Apple Seatbelt — restricts what files/processes the agent can touch
+- **Linux**: Bubblewrap â restricts filesystem and network access
+- **macOS**: Apple Seatbelt â restricts what files/processes the agent can touch
 
 This is automatic on newer Claude Code versions. You can verify:
 ```bash
@@ -147,3 +180,104 @@ This is the principle: trust flows down, but permissions don't automatically cas
 - **Spending limits**: Set them in the Anthropic console now
 
 With that sorted, let's give your agent a memory.
+
+---
+
+## When Using Bypass/Dangerously Skip: A Security Checklist
+
+Inspired by how this guide's author (Erik) actually configured his OpenClaw agents:
+
+### 1. Constrain via CLAUDE.md — Your Most Powerful Tool
+
+The agent reads this before every action. Use it to define what's off-limits:
+
+```markdown
+# Security Constraints
+
+## What I am NOT allowed to do:
+- Never commit or push to git without explicit permission
+- Never send emails or messages without confirmation
+- Never delete files — use trash/archive instead
+- Never modify files outside /workspace
+- Never access credentials files (.env, secrets/, credentials/)
+- Never make API calls to payment services
+
+## Allowed bash commands (whitelist approach):
+- File operations: read, write, create in /workspace only
+- Git: status, diff, log (read-only) — NOT push, commit
+- Package managers: npm install, pip install
+- Testing: pytest, npm test
+- Build tools: npm run build, make
+
+## If unsure: ask before acting
+```
+
+### 2. Docker Isolation — The Nuclear Option (Safest)
+
+```bash
+# Agent can only damage what's in /workspace
+# Your main system is completely safe
+docker run -it --rm \
+  -e ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY \
+  -v $(pwd)/agent-workspace:/workspace \
+  --network none \
+  --memory="2g" \
+  node:20 bash -c "npm install -g @anthropic-ai/claude-code && claude --dangerously-skip-permissions"
+```
+
+### 3. Network Restrictions — Prevent Data Exfiltration
+
+```bash
+# Allow only specific domains
+# In CLAUDE.md:
+# - Only make HTTP requests to: api.anthropic.com, api.github.com
+# - No other network calls
+```
+
+Or at OS level: use a firewall rule to restrict the agent's process.
+
+### 4. Git Safety — The Most Common Accident
+
+```bash
+# Add to your project's .claude/rules/git.md:
+# NEVER run: git push, git commit without explicit user confirmation
+# ALWAYS run: git diff --cached --name-only before any commit
+# Check for .env files in staged changes
+
+# Set up a pre-commit hook:
+echo '#!/bin/bash
+git diff --cached --name-only | grep -E "\.env|secrets|credentials" && echo "❌ Potential secret file detected!" && exit 1 || exit 0' > .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+```
+
+### 5. Spending Limits — Set in Anthropic Console
+
+- Go to console.anthropic.com → Billing → Usage Limits
+- Set monthly hard limit ($20-50 is reasonable for personal use)
+- Enable email alerts at 80% usage
+
+### 6. Separate API Keys per Agent — If One Leaks, Others Are Safe
+
+- `ANTHROPIC_KEY_PERSONAL` — for personal coding
+- `ANTHROPIC_KEY_AGENT_GOOPER` — for your always-on agent
+- `ANTHROPIC_KEY_AUTOMATION` — for scheduled tasks
+
+### 7. Secret Scanner — Before Any Commit
+
+```bash
+npx ai-secret-scan ./  # Scans for leaked API keys
+# Or add to pre-push hook
+```
+
+### 8. The Orchestrator Permission Model (Advanced)
+
+When you have multiple agents, the orchestrator decides what each sub-agent can do:
+
+```
+Orchestrator: read files + send messages only
+├── Research Agent: web search only, cannot write files
+├── Coding Agent: write to /workspace, cannot access network
+└── Review Agent: read-only, cannot modify anything
+```
+
+This way, even if one agent is compromised or makes a mistake, the damage is contained.

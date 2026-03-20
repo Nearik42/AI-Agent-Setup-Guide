@@ -14,4 +14,5 @@
 * [🔍 Framework Deep Dive](docs/08c-framework-deep-dive.md)
 * [Multi-Agent Architecture](docs/09-multi-agent.md)
 * [Twitter/X Resources](docs/10-twitter-index.md)
+* [💡 Use Cases](docs/12-use-cases.md)
 * [Glossary](docs/11-glossary.md)
