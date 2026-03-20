@@ -1,8 +1,3 @@
----
-title: "Introduction"
-nav_order: 0
----
-
 # So You Want to Build an AI Agent
 
 **From "I've heard about AI agents" to running your own multi-agent system — step by step.**
