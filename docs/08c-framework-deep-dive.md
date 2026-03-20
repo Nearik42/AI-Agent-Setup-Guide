@@ -258,3 +258,7 @@ If you've read this far in the guide, you have more than enough knowledge to bui
 ---
 
 *Next: [Multi-Agent Architecture →](09-multi-agent.md) — designing systems where multiple agents collaborate on complex tasks.*
+
+---
+
+[← 🌐 Platform Landscape](08b-agent-platforms.md) · [📚 Table of Contents](../README.md) · [🤖 Multi-Agent Architecture →](09-multi-agent.md)
