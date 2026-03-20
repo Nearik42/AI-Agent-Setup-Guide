@@ -1,3 +1,8 @@
+---
+title: "📱 Always-On Agent"
+nav_order: 9
+---
+
 # Always-On Agent: Telegram & Discord
 
 Right now your agent only works when you open a terminal. Let's change that.
