@@ -1,3 +1,8 @@
+---
+title: "💻 Terminal Basics"
+nav_order: 3
+---
+
 # Terminal Basics: A Survival Guide for Non-Developers
 
 > 💡 **Good news before we start:** Once Claude Code is set up, you won't need to remember most of what's in this chapter. You'll type in plain English — "create a project folder", "install what I need", "set this up" — and Claude Code handles the actual commands. This chapter is the **one-time setup**, not a new skill you'll need forever. Think of it like learning to turn on a car. You do it once, then you just drive.
