@@ -85,7 +85,7 @@ crontab -e
 
 Add this line:
 ```
-0 8 * * * ANTHROPIC_API_KEY=your-key claude --print -p "$(cat ~/morning-brief-prompt.md)" | ~/scripts/telegram-notify.sh
+0 8 * * * source ~/.env && claude --print -p "$(cat ~/morning-brief-prompt.md)" | ~/scripts/telegram-notify.sh
 ```
 
 That's it. Every morning at 8am, you get a briefing on your phone.
