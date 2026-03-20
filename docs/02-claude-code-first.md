@@ -1,8 +1,10 @@
 # Claude Code: Your First AI Agent (10 Minutes)
 
-Claude Code is an AI agent that runs in your terminal. Unlike ChatGPT, it doesn't just answer questions — it reads your files, writes code, runs commands, and builds things.
+[Claude Code](https://docs.anthropic.com/en/docs/claude-code/) is an AI agent that runs in your terminal. ([quickstart guide](https://docs.anthropic.com/en/docs/claude-code/quickstart)) Unlike ChatGPT, it doesn't just answer questions — it reads your files, writes code, runs commands, and builds things.
 
 This is your first aha moment.
+
+> 💬 **Community:** [@lukepierceops](https://x.com/lukepierceops/status/2032813461399392412) — "Automation consultants charge $15K for what Claude Code now does in 2 hours."
 
 ---
 
@@ -19,6 +21,8 @@ When you ask Claude Code to "write a Python script," it:
 6. Tells you it's done
 
 It operates in your actual file system. It's an agent, not a chatbot.
+
+> 💬 **Community:** [@nurijanian](https://x.com/nurijanian/status/2032124503330058696) — "PM who uses Claude Code/Cursor to build and execute research, strategy, and discovery — not just answer questions."
 
 ---
 
@@ -40,6 +44,8 @@ export ANTHROPIC_API_KEY=your-key-here
 echo 'export ANTHROPIC_API_KEY=your-key-here' >> ~/.zshrc  # or ~/.bashrc
 source ~/.zshrc
 ```
+
+Get your API key from the [Anthropic console](https://console.anthropic.com). If you don't have Node.js, install it via [FNM (Fast Node Manager)](https://github.com/Schniz/fnm) — fastest and cleanest way.
 
 ### First launch:
 ```bash
@@ -92,7 +98,7 @@ Watch it think through the problem, create multiple files, and test them.
 
 ## Understanding the Permission Prompts
 
-When Claude Code wants to do something, it asks permission first (by default):
+When Claude Code wants to do something, it asks permission first (by default). See the [full permissions and security model](https://docs.anthropic.com/en/docs/claude-code/security) for details.
 
 ```
 Claude wants to: run `python weather.py`
@@ -141,6 +147,10 @@ ENDMD
 ```
 
 Now every Claude Code session in this folder starts with that context.
+
+> 💬 **Community:** [@cathrynlavery](https://x.com/cathrynlavery/status/2032923364424057007) — "Your AI skills shouldn't live in 3 different places." Use CLAUDE.md as your single source of project truth.
+
+> 💬 **Community:** [@toddsaunders](https://x.com/toddsaunders/status/2031346598132011154) — Built a `/investor-pitch` Claude Code skill — a great example of how far custom skills can go once you have the pattern down.
 
 ---
 
