@@ -2,6 +2,8 @@
 
 Note-taking assistants and calendar summaries get all the press. Here's what's actually interesting.
 
+> 💬 **Community:** [@Bencera](https://x.com/Bencera/status/2031061573473808600) — "0 employees. $3.2M run rate. Here's exactly how I operate. TALK TO AI ALL DAY." The use cases below are how people like this actually leverage agents.
+
 ---
 
 ## 1. Due Diligence Research Agent ⭐⭐⭐ Advanced
@@ -15,7 +17,7 @@ Note-taking assistants and calendar summaries get all the press. Here's what's a
 **Real example:** Erik built exactly this — MA Advisor, running at port 3002, generates full structured reports on demand. The same tool investment banks charge thousands for.
 
 **How to build:**
-1. Set up Claude Code with Perplexity or Tavily for web search
+1. Set up Claude Code with [Perplexity](https://www.perplexity.ai/computer) or Tavily for web search
 2. Create a report template in CLAUDE.md (financials, risks, competitors, news section)
 3. Give it a company name — it handles the rest
 
@@ -153,11 +155,15 @@ Note-taking assistants and calendar summaries get all the press. Here's what's a
 **Why it matters:** Content strategy work is valuable but tedious. The research that good briefs require takes 3-4 hours manually. An agent does it in 10 minutes.
 
 **How to build:**
-1. Tavily or Perplexity for web research
+1. Tavily or [Perplexity](https://www.perplexity.ai/computer) for web research
 2. Claude analysis with a brief template
 3. Output: target audience, key questions to answer, competitor gaps, structure suggestions
 
 **The honest position:** Don't use AI to generate the content — readers can tell. Use it to be 5x better at briefing the writers who create it.
+
+> 💬 **Community:** [@Mike_Scully_](https://x.com/Mike_Scully_/status/2034253609865732233) — "I condensed everything I know about selling AI services into one cheat sheet." — if you're building agent use cases for clients, this is required reading.
+
+> 💬 **Community:** [@seratch](https://x.com/seratch/status/2031041799494791415) — "New post on the OpenAI Developer Blog: how we use skills for open-source maintenance" — skills as use cases, not just utilities.
 
 ---
 
@@ -170,7 +176,7 @@ Note-taking assistants and calendar summaries get all the press. Here's what's a
 **Why it matters:** Good travel planning takes 10+ hours. Most people skip it and wing it — then spend a week in the wrong neighborhood or miss things they would have loved.
 
 **How to build:**
-1. Perplexity/Tavily for real-time search (current prices, reviews, availability)
+1. [Perplexity](https://www.perplexity.ai/computer)/Tavily for real-time search (current prices, reviews, availability)
 2. Claude reasoning with your preferences in the system prompt
 3. Structured output → PDF or Notion export
 
