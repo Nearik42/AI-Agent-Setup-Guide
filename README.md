@@ -24,7 +24,9 @@ This is probably **not** for you if you want a pure no-code solution with zero t
 |-------|------------------|------------|
 | Mindset | Understanding agents vs chatbots | "Oh, it's like a permanent employee" |
 | Terminal Basics | Comfortable with Mac/Windows terminal | "I can do this" |
+| 🏠 [Deployment Options](docs/00b-deployment-options.md) | Where your agent lives: laptop, VPS, cloud | "I know where to run this" |
 | Claude Code | First AI agent in 10 minutes | "It actually does things" |
+| 💰 [Models & Costs](docs/02b-models-and-costs.md) | What you're actually paying for | "Now I can budget this" |
 | Permissions & Security | Safe agent setup | "Now I know what I'm allowing" |
 | Persistent Memory | Agent that remembers you | "It knows my projects" |
 | Always-On Agent | Telegram/Discord bot | "I can message it from my phone" |
