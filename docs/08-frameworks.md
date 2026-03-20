@@ -4,6 +4,8 @@ You've built a minimal agent from scratch. You understand the loop. Now let's ta
 
 Honest answer first: most people add a framework too early. Your DIY agent from Stage 7 is good enough for a lot of use cases. Add a framework when you hit a wall, not because you read about it on Twitter.
 
+> 💬 **Community:** [@sukh_saroy](https://x.com/sukh_saroy/status/2031255472532238577) — "OpenAI just launched Operator and charged $200/month for it. Someone built the exact same thing: open source, free." The framework ecosystem is catching up fast.
+
 ---
 
 ## When You Actually Need a Framework
@@ -66,9 +68,13 @@ openclaw init
 openclaw gateway start
 ```
 
+> 💬 **Community:** [@WorkflowWhisper](https://x.com/WorkflowWhisper/status/2030638076268023973) — "Synta just dropped openclaw integration. OpenClaw is the fastest growing open source project" — the ecosystem is expanding quickly.
+
+> 💬 **Community:** [@kloss_xyz](https://x.com/kloss_xyz/status/2033898090542076296) — "This prompt audits your @openclaw against 21 layers required to build a Jarvis-like multi-agent system." A useful self-audit for when your setup feels incomplete.
+
 ### n8n
 
-n8n is a visual workflow builder. You drag nodes onto a canvas, connect them, and define what happens when a trigger fires. Think Zapier but self-hosted, more powerful, and free.
+[n8n](https://n8n.io) is a visual workflow builder. You drag nodes onto a canvas, connect them, and define what happens when a trigger fires. Think Zapier but self-hosted, more powerful, and free.
 
 **Architecture**: Trigger node (schedule, webhook, email) → processing nodes → action nodes. You can call the Claude API from a "HTTP Request" node and connect it to any service that has an n8n integration (hundreds exist).
 
@@ -82,7 +88,7 @@ docker run -it --rm -p 5678:5678 n8nio/n8n
 
 ### CrewAI
 
-CrewAI is a Python framework for building role-based multi-agent systems. You define "crews" of agents, each with a role, goal, and tools. The crew works together to accomplish a task.
+[CrewAI](https://crewai.com) is a Python framework for building role-based multi-agent systems. You define "crews" of agents, each with a role, goal, and tools. The crew works together to accomplish a task.
 
 **Architecture**: You define agents (Researcher, Writer, Reviewer), assign them tools, and write a "task" for the crew to complete. CrewAI handles the coordination and output passing.
 
@@ -96,7 +102,7 @@ pip install crewai
 
 ### AutoGen / Microsoft Agent Framework
 
-AutoGen (now rebranded as Microsoft Agent Framework) is a Python library for building conversation-based multi-agent systems. Agents talk to each other in a structured way until they solve a problem.
+[AutoGen](https://github.com/microsoft/autogen) (now rebranded as Microsoft Agent Framework) is a Python library for building conversation-based multi-agent systems. Agents talk to each other in a structured way until they solve a problem.
 
 **Architecture**: Agents as conversation participants. A UserProxy agent represents the human. An AssistantAgent handles tasks. A GroupChat object coordinates who speaks when. It's conversation as orchestration.
 
@@ -110,7 +116,7 @@ pip install pyautogen
 
 ### LangGraph
 
-LangGraph is a library for building stateful, graph-based agent workflows. You define nodes (agent steps) and edges (transitions between steps, including conditional logic). It gives you maximum control over the flow of execution.
+[LangGraph](https://langchain-ai.github.io/langgraph/) is a library for building stateful, graph-based agent workflows. You define nodes (agent steps) and edges (transitions between steps, including conditional logic). It gives you maximum control over the flow of execution.
 
 **Architecture**: Directed graph where nodes are functions and edges define what happens next. You can have loops, conditional branching, parallel execution, and checkpointing. It's the most flexible option — and the most complex.
 
