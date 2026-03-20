@@ -2,6 +2,8 @@
 
 One agent is useful. Multiple agents are powerful. This chapter covers why you'd want more than one, how to coordinate them, and what a real multi-agent setup looks like.
 
+> 💬 **Community:** [@BoWang87](https://x.com/BoWang87/status/2032655917737771107) — "2026 is the year of agents. Here's the evidence from GitHub's fastest-growing AI repos." Multi-agent systems are the frontier everyone's racing toward.
+
 ---
 
 ## Why Multiple Agents?
@@ -49,6 +51,8 @@ Agent         Agent      Agent
 - Execute it using their tools and context
 - Return the result
 - Don't talk to each other directly (all coordination goes through the orchestrator)
+
+> 💬 **Community:** [@techNmak](https://x.com/techNmak/status/2030992194119864499) — "OpenClaw just got full observability. OpenClaw agents assemble context from: System prompts → History → Tool schemas." Observability matters when you have multiple agents; you need to see what each one knows.
 
 ---
 
