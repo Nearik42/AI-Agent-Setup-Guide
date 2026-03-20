@@ -53,7 +53,7 @@ Once you have a working agent setup:
 This isn't magic. There's real investment:
 
 - **Setup time**: Expect 2-6 hours to get a solid basic setup
-- **API costs**: ~$10-30/month for moderate use (depends on model choice)
+- **API costs**: ~+$20-150/month depending on usage (see [Models & Costs](02b-models-and-costs.md) for a full breakdown)
 - **Learning curve**: You'll need to be comfortable with a terminal (we cover this)
 - **Maintenance**: Occasional updates, expired tokens, config tweaks
 - **Prompt engineering**: The better you communicate with it, the better it works
