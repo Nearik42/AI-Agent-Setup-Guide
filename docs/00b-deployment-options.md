@@ -152,3 +152,7 @@ For most people reading this guide:
 All deployment options have API costs on top. The server/platform cost is just the hosting.
 
 The real cost variable is **how much you use the AI model**. More on this in the next chapter: [Models & Costs](02b-models-and-costs.md).
+
+---
+
+[← 🧠 Why AI Agents?](00-mindset.md) · [📚 Table of Contents](../README.md) · [💻 Terminal Basics →](01-terminal-basics.md)
