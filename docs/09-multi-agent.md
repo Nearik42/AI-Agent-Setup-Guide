@@ -1,5 +1,6 @@
 # Multi-Agent Architecture: The Full System
 
+> 💡 **You don't need to type any of this yourself.** Once Claude Code is running, paste this chapter's instructions and say *"set this up for me"* — it reads the guide and executes the commands on your behalf. The code blocks below are what Claude Code runs, not what you type.
 One agent is useful. Multiple agents are powerful. This chapter covers why you'd want more than one, how to coordinate them, and what a real multi-agent setup looks like.
 
 > 💬 **Community:** [@BoWang87](https://x.com/BoWang87/status/2032655917737771107) — "2026 is the year of agents. Here's the evidence from GitHub's fastest-growing AI repos." Multi-agent systems are the frontier everyone's racing toward.
