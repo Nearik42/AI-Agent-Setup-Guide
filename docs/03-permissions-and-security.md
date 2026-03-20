@@ -292,3 +292,7 @@ Orchestrator: read files + send messages only
 ```
 
 This way, even if one agent is compromised or makes a mistake, the damage is contained.
+
+---
+
+[← 💰 Models & Costs](02b-models-and-costs.md) · [📚 Table of Contents](../README.md) · [🧠 Persistent Memory →](04-persistent-memory.md)
