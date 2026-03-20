@@ -1,8 +1,3 @@
----
-title: "💰 Models & Costs"
-nav_order: 5
----
-
 # Models & Costs: What You're Actually Paying For
 
 The hidden surprise in AI agent setups: it's not the server that costs money — it's the model API calls. Understanding this upfront saves you from unexpected bills.
