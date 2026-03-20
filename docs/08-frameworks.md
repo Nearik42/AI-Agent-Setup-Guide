@@ -1,5 +1,6 @@
 # Agent Frameworks: Choosing the Right Tool
 
+> 💡 **You don't need to type any of this yourself.** Once Claude Code is running, paste this chapter's instructions and say *"set this up for me"* — it reads the guide and executes the commands on your behalf. The code blocks below are what Claude Code runs, not what you type.
 You've built a minimal agent from scratch. You understand the loop. Now let's talk about what frameworks actually give you — and which one you should use.
 
 Honest answer first: most people add a framework too early. Your DIY agent from Stage 7 is good enough for a lot of use cases. Add a framework when you hit a wall, not because you read about it on Twitter.
