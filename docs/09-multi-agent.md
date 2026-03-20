@@ -28,7 +28,7 @@ You (Discord/Telegram)
      v
 +--------------------+
 |   Orchestrator     |  <- Full model (Claude Opus/Sonnet)
-|   (gooper)         |    Reads all context, makes decisions
+|   (main-agent)         |    Reads all context, makes decisions
 +--------+-----------+
          |
          | delegates to
