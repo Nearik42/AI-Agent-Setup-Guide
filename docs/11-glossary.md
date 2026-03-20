@@ -148,3 +148,7 @@ The unit used to measure how much text an AI processes and to calculate costs. O
 ---
 
 *See something missing or explained poorly? Open an issue on GitHub.*
+
+---
+
+[← 🐦 Twitter/X Resources](10-twitter-index.md) · [📚 Table of Contents](../README.md) · [💡 Use Cases →](12-use-cases.md)
