@@ -1,52 +1,50 @@
-# 🤖 AI Setup Guide — From ChatGPT to Your Own Agent Army
+# The AI Agent Setup Guide
 
-> A practical guide for building your own AI agent setup — written for people who already use AI tools but want to go deeper.
+**From "I've heard about AI agents" to running your own multi-agent system — step by step.**
 
-## What is this?
-
-This guide walks you through setting up a **personal AI agent system** — one that runs 24/7, has persistent memory, connects to Discord, and can automate real work. It's based on a real setup using [OpenClaw](https://openclaw.dev), Claude, and Discord as the command center.
-
-This isn't theory. Every pattern here is in production.
-
-## Who is this for?
-
-✅ You already use ChatGPT, Claude, or Lovable
-✅ You're business-minded and want to automate real tasks
-✅ You're tech-curious and comfortable with a terminal (or willing to learn)
-✅ You want more than a chatbot — you want a digital team member
-
-❌ Not for: pure non-tech users who just need quick answers
-❌ Not for: people who've never opened a terminal and don't want to
-
-## Level Overview
-
-| Level | What You'll Build | Time Investment |
-|-------|------------------|-----------------|
-| 🟢 **Basic** | One agent with Discord integration | ~2–3 hours |
-| 🟡 **Intermediate** | Persistent memory + skill plugins + idea pipeline | ~1 day |
-| 🔴 **Advanced** | Multi-agent system with specialized roles + dev pipeline | ~1 week |
-
-## Table of Contents
-
-1. [🧠 Mindset: Why Agents?](docs/00-mindset.md)
-2. [🟢 Basic Setup: Your First AI Agent](docs/01-basic-setup.md)
-3. [🟡 Intermediate: Memory, Skills & Discovery Pipeline](docs/02-intermediate.md)
-4. [🔴 Advanced: Multi-Agent Architecture & Dev Pipeline](docs/03-advanced.md)
-5. [🐦 Twitter/X Resource Index](docs/04-twitter-index.md)
-6. [📖 Glossary](docs/05-glossary.md)
-
-## The Real Setup (for reference)
-
-This guide is based on a live setup with:
-
-- **Framework:** OpenClaw (multi-agent, runs on VPS)
-- **AI Model:** Claude (Opus for heavy thinking, Sonnet for everyday tasks)
-- **Command Center:** Discord (channels per project, mobile access)
-- **Agents:** `gooper` (orchestrator), `gooper-lite` (fast tasks), `dev` (coding), `analyst` (research)
-- **Memory:** `MEMORY.md` (long-term) + daily logs in `memory/YYYY-MM-DD.md`
-- **Skills:** discovery-pipeline, pm-orchestrator, coding-agent, weather, github, tavily
-- **Projects:** MA Advisor (M&A due diligence tool), ExoExplorer, Gooper-1 (AutoResearch)
+This guide is framework-agnostic. We start with Claude Code in your terminal and build up progressively. OpenClaw, n8n, AutoGen — these come later, as *options*, not requirements.
 
 ---
 
-*Start with [Mindset](docs/00-mindset.md) if you're new. Jump to [Basic Setup](docs/01-basic-setup.md) if you're ready to build.*
+## Who is this for?
+
+You're a good fit if you:
+- Use ChatGPT or Claude regularly and want to do more
+- Have tried Lovable, Cursor, or similar no-code/AI tools
+- Are comfortable opening a terminal (or willing to learn — we cover that)
+- Want an AI that *does things*, not just answers questions
+
+This is probably **not** for you if you want a pure no-code solution with zero terminal work. (That's fine — check out n8n or Make.com instead.)
+
+---
+
+## The Progression
+
+| Stage | What You'll Build | Aha Moment |
+|-------|------------------|------------|
+| Mindset | Understanding agents vs chatbots | "Oh, it's like a permanent employee" |
+| Terminal Basics | Comfortable with Mac/Windows terminal | "I can do this" |
+| Claude Code | First AI agent in 10 minutes | "It actually does things" |
+| Permissions & Security | Safe agent setup | "Now I know what I'm allowing" |
+| Persistent Memory | Agent that remembers you | "It knows my projects" |
+| Always-On Agent | Telegram/Discord bot | "I can message it from my phone" |
+| Automation | Scheduled tasks & skills | "It works while I sleep" |
+| Build Your Own | Custom agent without frameworks | "I understand how it works" |
+| Frameworks | OpenClaw, n8n, AutoGen, CrewAI | "Now I can choose the right tool" |
+| Multi-Agent | Multiple agents collaborating | "This is the full system" |
+
+---
+
+## Twitter/X Resources
+
+See docs/10-twitter-index.md — real bookmarks, organized by stage.
+
+---
+
+## Glossary
+
+See docs/11-glossary.md — every technical term explained in plain English.
+
+---
+
+*Built by Erik — a non-developer who went from "ChatGPT power user" to running a multi-agent system on a VPS in Thailand. If he can do it, you can too.*

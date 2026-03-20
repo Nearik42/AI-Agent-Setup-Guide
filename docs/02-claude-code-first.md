@@ -1,0 +1,167 @@
+# Claude Code: Your First AI Agent (10 Minutes)
+
+Claude Code is an AI agent that runs in your terminal. Unlike ChatGPT, it doesn't just answer questions — it reads your files, writes code, runs commands, and builds things.
+
+This is your first aha moment.
+
+---
+
+## What Makes Claude Code Different
+
+When you ask ChatGPT to "write a Python script," it shows you the code. You copy it. You paste it. You run it. You hit an error. You go back to ChatGPT.
+
+When you ask Claude Code to "write a Python script," it:
+1. Creates the file
+2. Runs it
+3. Sees the error
+4. Fixes it
+5. Runs it again
+6. Tells you it's done
+
+It operates in your actual file system. It's an agent, not a chatbot.
+
+---
+
+## Installation
+
+```bash
+# Install Claude Code globally
+npm install -g @anthropic-ai/claude-code
+
+# Verify installation
+claude --version
+```
+
+### Set up your API key:
+```bash
+export ANTHROPIC_API_KEY=your-key-here
+
+# Make it permanent (Mac/Linux):
+echo 'export ANTHROPIC_API_KEY=your-key-here' >> ~/.zshrc  # or ~/.bashrc
+source ~/.zshrc
+```
+
+### First launch:
+```bash
+# Navigate to any project folder (or create one)
+mkdir my-first-agent && cd my-first-agent
+
+# Start Claude Code
+claude
+```
+
+You'll see a prompt. You're in.
+
+---
+
+## Your First 5 Commands
+
+Try these in order. Watch what happens.
+
+**1. Ask it to create a file:**
+```
+> Create a simple Python script that shows today's date and weather summary placeholder
+```
+Claude Code will create `weather.py` in your folder. Actually create it.
+
+**2. Ask it to read something:**
+```
+> Read the file you just created and explain what it does
+```
+It reads the actual file, not from memory.
+
+**3. Ask it to fix something:**
+```
+> Add a function that calculates how many days until the end of the year
+```
+It edits the file. You can open it and see the changes.
+
+**4. Ask it a multi-step task:**
+```
+> Create a new file called expenses.py that reads a list of expenses from a CSV,
+> calculates totals by category, and outputs a summary. Include a sample CSV with test data.
+```
+Watch it think through the problem, create multiple files, and test them.
+
+**5. Give it a real task:**
+```
+> Look at what files are in this folder and suggest what project this could become
+```
+
+---
+
+## Understanding the Permission Prompts
+
+When Claude Code wants to do something, it asks permission first (by default):
+
+```
+Claude wants to: run `python weather.py`
+Allow? [y/n/always/never]:
+```
+
+- `y` — allow once
+- `n` — deny
+- `always` — always allow this type of command
+- `never` — never allow this type of command
+
+This is intentional. You're in control. (We'll cover the full permission model in the next chapter.)
+
+---
+
+## Useful Modes
+
+```bash
+# Interactive mode (default)
+claude
+
+# Run a one-shot task and exit
+claude -p "Write a haiku about Python" --print
+
+# Continue your last conversation
+claude --continue
+
+# Start with a specific file in context
+claude --add-file mycode.py
+```
+
+---
+
+## The CLAUDE.md File (Preview)
+
+If you create a file called `CLAUDE.md` in your project folder, Claude Code reads it automatically at the start of every session. This is how persistent memory starts — but we'll build this properly in Stage 4.
+
+Quick taste:
+```bash
+cat > CLAUDE.md << 'ENDMD'
+# Project Context
+This is my expense tracker project.
+Language: Python.
+Style: Simple, readable, no unnecessary dependencies.
+ENDMD
+```
+
+Now every Claude Code session in this folder starts with that context.
+
+---
+
+## When Claude Code Shines
+
+- Refactoring code you don't fully understand
+- Writing scripts for one-off tasks
+- Debugging errors (paste the error, it reads the code, it fixes it)
+- Exploring unfamiliar codebases
+- Building small tools quickly
+
+## When It Struggles
+
+- Very large codebases (context window limits)
+- Tasks requiring real-time data without tools
+- Things that need a browser UI (use browser tools for that)
+
+---
+
+## Next Step
+
+You now have a working AI agent. It's stateless — each session starts fresh.
+
+The next chapter covers permissions and security. Then we give it memory.
