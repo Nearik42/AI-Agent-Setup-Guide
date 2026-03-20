@@ -1,3 +1,8 @@
+---
+title: "🔒 Permissions & Security"
+nav_order: 6
+---
+
 # Permissions & Security: Don't Give Your Agent Root
 
 This chapter is boring but important. Skip it and you might accidentally let an agent delete important files or push secrets to GitHub.
