@@ -1,3 +1,8 @@
+---
+title: "💡 Use Cases"
+nav_order: 18
+---
+
 # Use Cases: What People Are Actually Building
 
 Note-taking assistants and calendar summaries get all the press. Here's what's actually interesting.
