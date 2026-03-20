@@ -52,4 +52,4 @@ See docs/11-glossary.md — every technical term explained in plain English.
 
 ---
 
-*Built by Erik — a non-developer who went from "ChatGPT power user" to running a multi-agent system on a VPS in Thailand. If he can do it, you can too.*
+*Built from real experience — going from "ChatGPT power user" to running a full multi-agent system. If this guide exists, someone already did it. You can too.*
