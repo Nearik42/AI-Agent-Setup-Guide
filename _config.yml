@@ -1,15 +1,17 @@
-title: AI Agent Setup Guide
+title: "AI Agent Setup Guide"
 description: "From zero to multi-agent: A practical guide to AI agents for business-minded builders"
-remote_theme: just-the-docs/just-the-docs@v0.10.0
+theme: minima
 url: "https://nearik42.github.io"
 baseurl: "/AI-Agent-Setup-Guide"
-search_enabled: true
-color_scheme: light
-footer_content: "AI Agent Setup Guide"
 plugins:
-  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
 exclude:
   - SUMMARY.md
   - .gitbook.yaml
   - "*.json"
+  - node_modules/
+  - vendor/
+header_pages:
+  - README.md
 
