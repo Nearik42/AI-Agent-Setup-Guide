@@ -58,3 +58,7 @@ See docs/11-glossary.md — every technical term explained in plain English.
 ---
 
 *Built from real experience — going from "ChatGPT power user" to running a full multi-agent system. If this guide exists, someone already did it. You can too.*
+
+---
+
+[🧠 Why AI Agents? →](docs/00-mindset.md)
