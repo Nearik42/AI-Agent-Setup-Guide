@@ -7,6 +7,8 @@ With a messaging integration, you can:
 - Get proactive updates without opening a terminal
 - Run tasks in the background
 
+> 💬 **Community:** [@openclaw](https://x.com/openclaw/status/2032694261993427260) — "How to set up live Chrome sessions" — another approach to always-on agents via browser integration.
+
 ---
 
 ## Option A: Telegram Bot (Easiest — Start Here)
@@ -71,7 +73,7 @@ This is a minimal starting point. In practice, you'd want error handling, messag
 ### The Real Solution: Use a Bot Library
 
 For a production-ready Telegram agent, use:
-- **Telegraf** (Node.js Telegram framework) — `npm install telegraf`
+- **[Telegraf](https://telegraf.js.org)** (Node.js Telegram framework) — `npm install telegraf`
 - **python-telegram-bot** (Python) — `pip install python-telegram-bot`
 - **OpenClaw** (which handles this natively — Stage 8)
 
@@ -119,6 +121,8 @@ client.on('messageCreate', async (message) => {
 client.login(process.env.DISCORD_TOKEN);
 ```
 
+Use the [discord.js](https://discord.js.org) library for more robust Discord bot development.
+
 ---
 
 ## Running it 24/7
@@ -131,6 +135,7 @@ node agent-bot.js &  # Run in background
 ```
 
 ### Option 2: PM2 (Simple Process Manager)
+[PM2](https://pm2.keymetrics.io) is the standard tool for keeping Node.js processes alive:
 ```bash
 npm install -g pm2
 pm2 start agent-bot.js --name "my-agent"
@@ -139,7 +144,7 @@ pm2 startup  # Auto-start on reboot
 ```
 
 ### Option 3: VPS (Recommended for Always-On)
-A 5 EUR/month VPS from Hetzner or DigitalOcean runs your agent 24/7 without using your laptop. This is what serious setups use.
+A 5 EUR/month VPS from [Hetzner Cloud](https://www.hetzner.com/cloud) or [DigitalOcean](https://digitalocean.com) runs your agent 24/7 without using your laptop. This is what serious setups use.
 
 Setup:
 ```bash
@@ -148,6 +153,8 @@ git clone your-repo
 npm install
 pm2 start agent-bot.js
 ```
+
+> 💬 **Community:** [@Voxyz_ai](https://x.com/Voxyz_ai/status/2033207871286980840) — "Dead simple way to maintain openclaw. Bugs, oauth expiring" — maintenance patterns for keeping your always-on agent healthy.
 
 ---
 
