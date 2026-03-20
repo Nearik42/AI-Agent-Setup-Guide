@@ -31,6 +31,8 @@ This is probably **not** for you if you want a pure no-code solution with zero t
 | Automation | Scheduled tasks & skills | "It works while I sleep" |
 | Build Your Own | Custom agent without frameworks | "I understand how it works" |
 | Frameworks | OpenClaw, n8n, AutoGen, CrewAI | "Now I can choose the right tool" |
+| 🌐 [Agent Platforms](docs/08b-agent-platforms.md) | Compare OpenClaw alternatives | "Now I know what's out there" |
+| 🔍 [Framework Deep Dive](docs/08c-framework-deep-dive.md) | How frameworks work + security + business | "I could build a business with this" |
 | Multi-Agent | Multiple agents collaborating | "This is the full system" |
 
 ---

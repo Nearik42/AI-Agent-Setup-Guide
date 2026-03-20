@@ -10,6 +10,8 @@
 * [Automation & Workflows](docs/06-automation-workflows.md)
 * [Build Your Own Agent](docs/07-custom-agent-diy.md)
 * [Agent Frameworks](docs/08-frameworks.md)
+* [🌐 Agent Platform Landscape](docs/08b-agent-platforms.md)
+* [🔍 Framework Deep Dive](docs/08c-framework-deep-dive.md)
 * [Multi-Agent Architecture](docs/09-multi-agent.md)
 * [Twitter/X Resources](docs/10-twitter-index.md)
 * [Glossary](docs/11-glossary.md)
