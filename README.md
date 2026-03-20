@@ -1,3 +1,8 @@
+---
+title: "Introduction"
+nav_order: 0
+---
+
 # The AI Agent Setup Guide
 
 **From "I've heard about AI agents" to running your own multi-agent system — step by step.**
