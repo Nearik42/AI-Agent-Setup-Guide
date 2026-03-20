@@ -18,6 +18,8 @@ The analogy that works best:
 
 The consultant gives you great answers. But they show up with zero context each time. Your employee knows your company, your preferences, your ongoing projects. They act without being asked for every small thing.
 
+> This is the pattern [@Bencera describes](https://x.com/Bencera/status/2031061573473808600): 0 employees, $3.2M run rate — "I talk to AI all day." The leverage comes from agents that act, not chatbots that respond.
+
 ---
 
 ## The "Digital Department" Model
@@ -41,6 +43,8 @@ Once you have a working agent setup:
 - **Always available**: Message it from your phone at 2am, it responds
 - **Parallel work**: While you're in a meeting, it's researching, coding, drafting
 - **Compounding value**: Every piece of context you give it makes it more useful
+
+> 💬 **Community:** [@lukepierceops](https://x.com/lukepierceops/status/2032813461399392412) — "Automation consultants charge $15K for what Claude Code now does in 2 hours." The gap between people who understand agents and those who don't is widening fast.
 
 ---
 
@@ -66,7 +70,7 @@ This isn't magic. There's real investment:
 
 **Wait if you:**
 - Just need occasional answers (ChatGPT is fine)
-- Want zero-code/zero-terminal solutions (use n8n or Make.com)
+- Want zero-code/zero-terminal solutions (use [n8n](https://n8n.io) or Make.com)
 - Don't have an Anthropic API key and aren't willing to pay for usage
 
 ---
@@ -75,6 +79,6 @@ This isn't magic. There's real investment:
 
 This guide takes you from zero to a working multi-agent system. Each stage is independent — you can stop at any stage and have something useful.
 
-**Stage 1 goal**: In 10 minutes, Claude Code will write a Python script for you, read your files, and run terminal commands — all from your terminal. That's the first aha moment.
+**Stage 1 goal**: In 10 minutes, [Claude Code](https://docs.anthropic.com/en/docs/claude-code/) will write a Python script for you, read your files, and run terminal commands — all from your terminal. That's the first aha moment.
 
 Let's start.
