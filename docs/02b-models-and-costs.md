@@ -31,6 +31,8 @@ The hidden surprise in AI agent setups: it's not the server that costs money —
 
 **Note**: GPT-4.1 (non-mini) and o1 are largely superseded. For serious agent work in 2026, use GPT-5.4 or o3. o4-mini is excellent value for reasoning-intensive tasks that don't need full o3.
 
+> 💬 **Community:** [@lamxnt](https://x.com/lamxnt/status/2030390230579281958) — "I have fully moved to Hermes Agent from @NousResearch. Main model is using Codex 5.3 with OAuth through OpenAI" — useful perspective on mixing local and cloud models.
+
 ---
 
 ### Google Gemini
@@ -87,7 +89,7 @@ OpenAI explicitly supports this. If you have a **ChatGPT Pro** subscription, you
 
 This means: a $200/month ChatGPT Pro subscription can power both your interactive ChatGPT use AND automated agent tasks, up to the subscription's rate limits.
 
-Setup: go to platform.openai.com → API keys → create key associated with your Pro subscription.
+Setup: go to [platform.openai.com/api-keys](https://platform.openai.com/api-keys) → create key associated with your Pro subscription.
 
 ### Anthropic/Claude: Gray Area ⚠️
 
@@ -128,7 +130,7 @@ Every time your agent responds, it sends:
 - Any files or data it has loaded
 
 **Example cost calculation (Claude Sonnet 4.6):**
-\`\`\`
+```
 System prompt:  2,000 tokens
 Conversation:  10,000 tokens  
 Your question:    200 tokens
@@ -139,7 +141,7 @@ Output:           800 tokens
 Cost: (12,200 × $3 + 800 × $15) / 1,000,000
     = $0.0366 + $0.012
     = ~$0.049 per exchange
-\`\`\`
+```
 
 50 exchanges/day × $0.049 = ~$2.45/day = **~$74/month** from context alone.
 
@@ -147,7 +149,7 @@ That's for moderate use. Heavy users with large system prompts and hundreds of d
 
 ### Real-world usage reports (from the community)
 
-| Usage Pattern | Monthly Cost (API) |
+| Usage Pattern | Monthly API Cost |
 |--------------|-------------------|
 | Experimenting, 10-20 queries/day | $5-25 |
 | Regular use, small context | $20-60 |
@@ -186,11 +188,11 @@ This happens automatically with the Anthropic API. No setup required.
 
 Not every task needs the most expensive model:
 
-\`\`\`
+```
 Routing/classification → Haiku 3.5 (cheap, fast)
 Regular coding/writing → Sonnet 4.6 (good balance)
 Complex reasoning → Opus 4.5 (worth it for hard problems)
-\`\`\`
+```
 
 Using Haiku for 70% of calls and Sonnet for 30% can cut costs by 50-70% vs. using Sonnet for everything.
 
@@ -204,23 +206,27 @@ In [console.anthropic.com](https://console.anthropic.com) → Settings → Limit
 
 **Start with $30-50**. Raise it once you understand your actual usage pattern. An uncapped agent in a loop can burn through hundreds of dollars before you notice.
 
+### 6. Keep agent docs current
+
+> 💬 **Community:** [@AndrewYNg](https://x.com/AndrewYNg/status/2031051809499054099) — "Context Hub, an open tool that gives your coding agent the up-to-date API documentation it needs" — [chub.ai](https://chub.ai) helps agents use current API docs instead of hallucinating outdated ones.
+
 ---
 
 ## Local Models: The Free Alternative
 
 For high-volume tasks where quality can be lower, local models cost nothing per call.
 
-**Ollama** — easiest to get started:
-\`\`\`bash
+**[Ollama](https://ollama.ai)** — easiest to get started:
+```bash
 # Install (Mac/Linux)
 curl -fsSL https://ollama.ai/install.sh | sh
 
 # Download and run a model
 ollama pull llama3.3
 ollama run llama3.3
-\`\`\`
+```
 
-**LM Studio** — GUI interface, no terminal required, download from [lmstudio.ai](https://lmstudio.ai)
+**[LM Studio](https://lmstudio.ai)** — GUI interface, no terminal required, great for beginners.
 
 **What runs locally in 2026:**
 | Model | RAM Needed | Quality | Best For |
