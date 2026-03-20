@@ -1,8 +1,3 @@
----
-title: "📖 Glossary"
-nav_order: 17
----
-
 # Glossary: Plain English Definitions
 
 Every technical term used in this guide, explained in 2-4 sentences without jargon.
