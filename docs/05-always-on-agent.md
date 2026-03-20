@@ -37,6 +37,29 @@ const { execSync } = require('child_process');
 const TOKEN = process.env.TELEGRAM_TOKEN;
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
+
+```javascript
+// Helper functions
+async function sendMessage(chatId, text) {
+  const url = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+  const resp = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: chatId, text: text.substring(0, 4096) })
+  });
+  return resp.json();
+}
+
+async function getUpdates(offset) {
+  const url = `https://api.telegram.org/bot${TOKEN}/getUpdates?offset=${offset}&timeout=10`;
+  const resp = await fetch(url);
+  const data = await resp.json();
+  return data.result || [];
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+```
+
 async function pollMessages() {
   let offset = 0;
   while (true) {
@@ -65,7 +88,7 @@ function runClaude(prompt) {
 }
 
 // sendMessage and getUpdates helpers omitted for brevity
-// See the full example in the repo
+// For a complete working example with all helper functions, see [telegraf.js.org](https://telegraf.js.org) (Node.js) or [python-telegram-bot.readthedocs.io](https://python-telegram-bot.readthedocs.io) (Python) — both have copy-paste quickstart guides
 ```
 
 This is a minimal starting point. In practice, you'd want error handling, message queuing, and proper async handling.
