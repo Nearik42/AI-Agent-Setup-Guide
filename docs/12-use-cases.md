@@ -351,3 +351,7 @@ Three paths depending on where you're starting:
 - GitHub webhook integration is a great gateway to agent infrastructure
 - You'll build patterns that scale to more complex systems
 - Build time: A few hours to MVP, a week to production-quality
+
+---
+
+[← 📖 Glossary](11-glossary.md) · [📚 Table of Contents](../README.md)
