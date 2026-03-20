@@ -38,6 +38,8 @@ Your agent runs as a process on your machine. When you close the lid, it stops.
 
 A small rented server (€4-15/month) that runs 24/7 — even when your laptop is off.
 
+> 💡 **The one-time investment:** Setting up a VPS sounds intimidating — SSH, server configuration, installing packages. Here's the honest truth: you do this once. After that, Claude Code runs on the server and you give it instructions in plain English from your phone or laptop. The setup takes 1-3 hours. The payoff is an agent available 24/7 that you control entirely with natural language.
+
 **How it works:**
 - Rent a server from Hetzner, DigitalOcean, or similar
 - Install your agent there
