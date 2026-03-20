@@ -180,3 +180,7 @@ Test it:
 3. Watch it respond
 
 That's an AI agent. Always on, accessible anywhere.
+
+---
+
+[← 🎯 Skills](04b-skills.md) · [📚 Table of Contents](../README.md) · [⚙️ Automation & Workflows →](06-automation-workflows.md)
